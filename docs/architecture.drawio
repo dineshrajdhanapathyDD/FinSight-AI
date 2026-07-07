@@ -1,193 +1,175 @@
-<mxfile host="app.diagrams.net" modified="2026-07-07T10:00:00.000Z" agent="IDBI Innovate 2026" version="24.0.0">
-  <diagram id="finsight-architecture" name="FinSight AI Architecture">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-
-        <!-- Title -->
-        <mxCell id="title" value="FinSight AI (Dhan Sakhi) - System Architecture" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="500" y="20" width="600" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="subtitle" value="IDBI Innovate 2026 | Track 01: Digital Wealth Management | Amazon Nova on Bedrock" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="500" y="55" width="600" height="30" as="geometry" />
-        </mxCell>
-
-        <!-- CLIENT LAYER -->
-        <mxCell id="client-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="100" width="400" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="client-label" value="CLIENT LAYER" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#1565c0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="105" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="mobile" value="📱 IDBI Mobile App&#xa;React Native + Unity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;" vertex="1" parent="1">
-          <mxGeometry x="80" y="135" width="150" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="web" value="🌐 Web Application&#xa;React + Tailwind CSS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="135" width="150" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- CDN + GATEWAY -->
-        <mxCell id="cdn" value="☁️ Amazon CloudFront&#xa;Global CDN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff9800;strokeColor=#e65100;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="180" y="260" width="180" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="apigw" value="🔀 Amazon API Gateway&#xa;REST + WebSocket + Rate Limiting" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1fa2;strokeColor=#4a0072;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="350" width="220" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="cognito" value="🔐 Amazon Cognito&#xa;Auth + MFA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c62828;strokeColor=#b71c1c;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="420" y="350" width="140" height="50" as="geometry" />
-        </mxCell>
-
-        <!-- APPLICATION LAYER -->
-        <mxCell id="app-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="440" width="500" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="app-label" value="APPLICATION LAYER (FastAPI on ECS Fargate)" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="60" y="445" width="300" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="chat-svc" value="💬 Chat&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="70" y="480" width="80" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="speech-svc" value="🎤 Speech&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="170" y="480" width="80" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="port-svc" value="📊 Portfolio&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="270" y="480" width="80" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="rec-svc" value="💡 Recommend&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="370" y="480" width="80" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="avatar-svc" value="🎭 Avatar&#xa;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="465" y="480" width="70" height="70" as="geometry" />
-        </mxCell>
-
-        <!-- AI LAYER -->
-        <mxCell id="ai-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="100" width="500" height="350" as="geometry" />
-        </mxCell>
-        <mxCell id="ai-label" value="AI / ML LAYER" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#e65100;" vertex="1" parent="1">
-          <mxGeometry x="610" y="105" width="100" height="20" as="geometry" />
-        </mxCell>
-
-        <!-- Agents -->
-        <mxCell id="orchestrator" value="🤖 Agentic AI Orchestrator&#xa;(LangGraph)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="130" width="200" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="research-agent" value="🔍 Research&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="620" y="190" width="90" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="compliance-agent" value="✅ Compliance&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="720" y="190" width="90" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="portfolio-agent" value="📈 Portfolio&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="820" y="190" width="90" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="exec-agent" value="⚙️ Execution&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="920" y="190" width="90" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="personal-agent" value="🧠 Personal&#xa;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="1020" y="190" width="70" height="55" as="geometry" />
-        </mxCell>
-
-        <!-- Models -->
-        <mxCell id="nova-lite" value="🤖 Amazon Nova Lite&#xa;Fast Conversations&#xa;Multilingual Chat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="280" width="160" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="nova-pro" value="🧠 Amazon Nova Pro&#xa;Complex Financial Analysis&#xa;Portfolio Optimization" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="800" y="280" width="170" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="sagemaker" value="📊 Amazon SageMaker&#xa;Custom Risk Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="990" y="280" width="100" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="kb" value="📚 Bedrock Knowledge Bases&#xa;Product Docs + SEBI Regulations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;" vertex="1" parent="1">
-          <mxGeometry x="620" y="370" width="220" height="50" as="geometry" />
-        </mxCell>
-
-        <!-- SPEECH -->
-        <mxCell id="polly" value="🗣️ Amazon Polly Neural&#xa;TTS - 12+ Indian Languages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="860" y="370" width="170" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="transcribe" value="👂 Amazon Transcribe&#xa;STT - Multilingual" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="860" y="430" width="170" height="50" as="geometry" />
-        </mxCell>
-
-        <!-- AVATAR -->
-        <mxCell id="avatar-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="500" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="avatar-label" value="AVATAR ENGINE" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#c62828;" vertex="1" parent="1">
-          <mxGeometry x="610" y="505" width="100" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="did" value="🎭 D-ID API&#xa;Avatar Gen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c62828;" vertex="1" parent="1">
-          <mxGeometry x="620" y="530" width="80" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="lipsync" value="👄 Lip-Sync&#xa;Audio2Face" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c62828;" vertex="1" parent="1">
-          <mxGeometry x="720" y="530" width="80" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="emotion" value="😊 Emotion&#xa;Detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c62828;" vertex="1" parent="1">
-          <mxGeometry x="810" y="530" width="80" height="55" as="geometry" />
-        </mxCell>
-
-        <!-- DATA LAYER -->
-        <mxCell id="data-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="620" width="500" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="data-label" value="DATA LAYER" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#6a1b9a;" vertex="1" parent="1">
-          <mxGeometry x="60" y="625" width="100" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="dynamo" value="⚡ DynamoDB&#xa;Sessions + Context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
-          <mxGeometry x="70" y="655" width="100" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="rds" value="🗄️ RDS PostgreSQL&#xa;Customer + Portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
-          <mxGeometry x="190" y="655" width="110" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="s3" value="📦 Amazon S3&#xa;Docs + Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
-          <mxGeometry x="320" y="655" width="100" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="redis" value="🔴 ElastiCache&#xa;Redis Cache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
-          <mxGeometry x="440" y="655" width="90" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- EXTERNAL -->
-        <mxCell id="ext-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efebe9;strokeColor=#4e342e;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="600" y="640" width="500" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="ext-label" value="EXTERNAL INTEGRATIONS" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#4e342e;" vertex="1" parent="1">
-          <mxGeometry x="610" y="645" width="150" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="idbi-core" value="🏦 IDBI Core&#xa;Banking APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
-          <mxGeometry x="620" y="675" width="95" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="market-api" value="📈 NSE/BSE&#xa;Market Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
-          <mxGeometry x="730" y="675" width="95" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="mf-api" value="📊 MF APIs&#xa;BSE StarMF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
-          <mxGeometry x="840" y="675" width="95" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="aa" value="🔗 Account&#xa;Aggregator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
-          <mxGeometry x="950" y="675" width="95" height="50" as="geometry" />
-        </mxCell>
-
-        <!-- CONNECTIONS -->
-        <mxCell id="c1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="mobile" target="cdn" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="web" target="cdn" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="cdn" target="apigw" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c4" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="apigw" target="cognito" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="apigw" target="chat-svc" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="chat-svc" target="orchestrator" parent="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram id="finsight-architecture" name="FinSight AI Architecture">
+        <mxGraphModel dx="536" dy="261" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="FinSight AI (Dhan Sakhi) - System Architecture" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="180" width="600" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="IDBI Innovate 2026 | Track 01: Digital Wealth Management | Amazon Nova on Bedrock" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="215" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="260" width="400" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="CLIENT LAYER" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#1565c0;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="265" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="📱 IDBI Mobile App&#10;React Native + Unity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="295" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="🌐 Web Application&#10;React + Tailwind CSS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="295" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="☁️ Amazon CloudFront&#10;Global CDN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff9800;strokeColor=#e65100;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="420" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="🔀 Amazon API Gateway&#10;REST + WebSocket + Rate Limiting" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7b1fa2;strokeColor=#4a0072;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="510" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="🔐 Amazon Cognito&#10;Auth + MFA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c62828;strokeColor=#b71c1c;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="510" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="600" width="500" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="APPLICATION LAYER (FastAPI on ECS Fargate)" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="605" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="💬 Chat&#10;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="640" width="80" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="🎤 Speech&#10;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="640" width="80" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="📊 Portfolio&#10;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="640" width="80" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="💡 Recommend&#10;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="640" width="80" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="🎭 Avatar&#10;Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="665" y="640" width="70" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="260" width="500" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="AI / ML LAYER" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#e65100;" vertex="1" parent="1">
+                    <mxGeometry x="810" y="265" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="🤖 Agentic AI Orchestrator&#10;(LangGraph)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="290" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="🔍 Research&#10;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="350" width="90" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="✅ Compliance&#10;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="350" width="90" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="📈 Portfolio&#10;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="1020" y="350" width="90" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="⚙️ Execution&#10;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="1120" y="350" width="90" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="🧠 Personal&#10;Agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8eaf6;strokeColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="1220" y="350" width="70" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="🤖 Amazon Nova Lite&#10;Fast Conversations&#10;Multilingual Chat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="440" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="🧠 Amazon Nova Pro&#10;Complex Financial Analysis&#10;Portfolio Optimization" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1000" y="440" width="170" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="📊 Amazon SageMaker&#10;Custom Risk Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1190" y="440" width="100" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="📚 Bedrock Knowledge Bases&#10;Product Docs + SEBI Regulations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="530" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="🗣️ Amazon Polly Neural&#10;TTS - 12+ Indian Languages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1060" y="520" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="👂 Amazon Transcribe&#10;STT - Multilingual" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1060" y="580" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="660" width="300" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="AVATAR ENGINE" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#c62828;" vertex="1" parent="1">
+                    <mxGeometry x="810" y="665" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="🎭 D-ID API&#10;Avatar Gen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c62828;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="690" width="80" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="👄 Lip-Sync&#10;Audio2Face" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c62828;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="690" width="80" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="😊 Emotion&#10;Detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c62828;" vertex="1" parent="1">
+                    <mxGeometry x="1010" y="690" width="80" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="780" width="500" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="DATA LAYER" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#6a1b9a;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="785" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="⚡ DynamoDB&#10;Sessions + Context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="815" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="🗄️ RDS PostgreSQL&#10;Customer + Portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="815" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="📦 Amazon S3&#10;Docs + Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="815" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="🔴 ElastiCache&#10;Redis Cache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6a1b9a;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="815" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#efebe9;strokeColor=#4e342e;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="800" width="500" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="EXTERNAL INTEGRATIONS" style="text;html=1;align=left;fontSize=10;fontStyle=1;fontColor=#4e342e;" vertex="1" parent="1">
+                    <mxGeometry x="810" y="805" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="🏦 IDBI Core&#10;Banking APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="835" width="95" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="📈 NSE/BSE&#10;Market Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
+                    <mxGeometry x="930" y="835" width="95" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="📊 MF APIs&#10;BSE StarMF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="835" width="95" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="🔗 Account&#10;Aggregator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4e342e;" vertex="1" parent="1">
+                    <mxGeometry x="1150" y="835" width="95" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="6" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="7" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="8" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="9" target="10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="9" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" style="edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="13" target="20">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="310" y="760"/>
+                            <mxPoint x="780" y="760"/>
+                            <mxPoint x="780" y="310"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>

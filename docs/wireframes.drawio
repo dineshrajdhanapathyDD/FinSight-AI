@@ -1,199 +1,184 @@
-<mxfile host="app.diagrams.net" modified="2026-07-07T12:00:00.000Z" agent="FinSight AI">
-  <diagram id="wireframes" name="Wireframes - Mobile App Screens">
-    <mxGraphModel dx="2000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1200" math="0" shadow="1">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-
-        <!-- Title -->
-        <mxCell id="title" value="FinSight AI — Mobile App Wireframes" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="700" y="10" width="500" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- SCREEN 1: Welcome -->
-        <mxCell id="phone1" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="50" y="70" width="230" height="440" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-title" value="IDBI Bank" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="100" y="110" width="130" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-avatar" value="🧠" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="130" y="140" width="70" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-name" value="FinSight AI&#xa;Dhan Sakhi" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="100" y="220" width="130" height="35" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-sub" value="Your AI Wealth Advisor" style="text;html=1;align=center;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="100" y="255" width="130" height="15" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-lang" value="Select Language:" style="text;html=1;align=center;fontSize=9;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="100" y="280" width="130" height="15" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-hi" value="हिन्दी" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="75" y="300" width="55" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-en" value="English" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="137" y="300" width="55" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-ta" value="தமிழ்" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="199" y="300" width="55" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-te" value="తెలుగు" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="75" y="330" width="55" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-bn" value="বাংলা" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="137" y="330" width="55" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-mr" value="मराठी" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="199" y="330" width="55" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-btn" value="Continue →" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="95" y="380" width="140" height="35" as="geometry" />
-        </mxCell>
-        <mxCell id="s1-label" value="Screen 1: Welcome" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="95" y="520" width="140" height="20" as="geometry" />
-        </mxCell>
-
-        <!-- SCREEN 2: Chat with Avatar -->
-        <mxCell id="phone2" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="330" y="70" width="230" height="440" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-header" value="← Dhan Sakhi 📊" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="355" y="105" width="180" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-avatar" value="👩‍💼" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#00bcd4;fontSize=28;" vertex="1" parent="1">
-          <mxGeometry x="400" y="140" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-wave" value="〰️ speaking..." style="text;html=1;align=center;fontSize=8;fontColor=#00bcd4;" vertex="1" parent="1">
-          <mxGeometry x="400" y="222" width="80" height="15" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-agents" value="🔍 research  ✅ compliance  📈 portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;fontSize=7;strokeColor=#2e7d32;" vertex="1" parent="1">
-          <mxGeometry x="360" y="240" width="170" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-bubble" value="नमस्ते राजेश जी! 🙏&#xa;आपका पोर्टफोलियो ₹8,45,230&#xa;पर है (+17.1%)&#xa;किसमें मदद करूं?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="360" y="265" width="165" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-quick" value="[Portfolio] [Goals] [Invest]" style="text;html=1;align=center;fontSize=8;fontColor=#1565c0;" vertex="1" parent="1">
-          <mxGeometry x="370" y="335" width="150" height="15" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-input" value="🎤  Type or speak..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="360" y="360" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-send" value="▶" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="495" y="360" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="s2-label" value="Screen 2: Avatar Chat" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="375" y="520" width="140" height="20" as="geometry" />
-        </mxCell>
-
-        <!-- SCREEN 3: Portfolio Dashboard -->
-        <mxCell id="phone3" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="610" y="70" width="230" height="440" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-header" value="← Portfolio Dashboard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="635" y="105" width="180" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-value" value="₹8,45,230&#xa;+17.1% (₹1,23,450)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0d47a1;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="645" y="138" width="170" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-alloc" value="Asset Allocation&#xa;████████░░ Equity 57%&#xa;██████░░░░ Debt 33%&#xa;██░░░░░░░░ Gold 10%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="645" y="192" width="170" height="65" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-hold" value="Holdings:&#xa;Axis Bluechip    +22.4%&#xa;HDFC Mid-Cap    +31.2%&#xa;SBI Gilt Fund     +7.8%&#xa;ICICI Gold ETF  +12.5%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="645" y="265" width="170" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-score" value="AI Health Score: 90/100 ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="645" y="348" width="170" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-ask" value="🎤 Ask about portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="660" y="380" width="140" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s3-label" value="Screen 3: Portfolio" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="660" y="520" width="140" height="20" as="geometry" />
-        </mxCell>
-
-        <!-- SCREEN 4: Recommendation -->
-        <mxCell id="phone4" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="890" y="70" width="230" height="440" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-header" value="← Recommendation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="915" y="105" width="180" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-avmsg" value="👩‍💼 Avatar says:&#xa;&quot;Based on your home goal&#xa; in 5 years, I recommend:&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="925" y="138" width="170" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-fund" value="📈 ICICI Balanced Advantage&#xa;SIP: ₹8,000/month&#xa;Duration: 5 years&#xa;Expected: ₹6.2L - ₹7.8L&#xa;Risk: ██████░░ Moderate&#xa;Rating: ★★★★★ (5/5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="925" y="195" width="170" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-why" value="Why this fund?&#xa;✓ Matches moderate risk&#xa;✓ Strong 5-yr track record&#xa;✓ Low expense ratio (0.89%)&#xa;✓ SEBI compliant ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="925" y="293" width="170" height="75" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-invest" value="✓ Invest Now" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="930" y="377" width="75" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-compare" value="Compare" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="1012" y="377" width="55" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-ask2" value="Ask" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="1074" y="377" width="40" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="s4-label" value="Screen 4: Recommendation" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="930" y="520" width="160" height="20" as="geometry" />
-        </mxCell>
-
-        <!-- SCREEN 5: Goal Tracker -->
-        <mxCell id="phone5" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1170" y="70" width="230" height="440" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-header" value="← Financial Goals" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="1195" y="105" width="180" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-g1" value="🏠 Home Purchase&#xa;Target: ₹50,00,000 | 5 years&#xa;████████░░ 65% on track" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="140" width="170" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-g2" value="🎓 Child Education&#xa;Target: ₹20,00,000 | 12 years&#xa;████░░░░░░ 35% on track" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="205" width="170" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-g3" value="🏖️ Retirement&#xa;Target: ₹3,00,00,000 | 25 years&#xa;██░░░░░░░░ 18% on track" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="270" width="170" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-insight" value="👩‍💼 AI Insight:&#xa;&quot;Increase monthly SIP by&#xa; ₹5,000 to meet all goals&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=8;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="338" width="170" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-btn" value="🎤 Discuss Goals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="1220" y="395" width="130" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="s5-label" value="Screen 5: Goals" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="1220" y="520" width="140" height="20" as="geometry" />
-        </mxCell>
-
-        <!-- Flow arrows between screens -->
-        <mxCell id="flow1" value="" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;entryX=0;entryY=0.5;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="280" y="290" as="sourcePoint" />
-            <mxPoint x="330" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="flow2" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="560" y="290" as="sourcePoint" />
-            <mxPoint x="610" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="flow3" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="840" y="290" as="sourcePoint" />
-            <mxPoint x="890" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="flow4" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1120" y="290" as="sourcePoint" />
-            <mxPoint x="1170" y="290" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram id="wireframes" name="Wireframes - Mobile App Screens">
+        <mxGraphModel dx="536" dy="261" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1200" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="FinSight AI - Mobile App Wireframes" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="140" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="200" width="230" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="IDBI Bank" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="240" width="130" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="🧠" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="270" width="70" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="FinSight AI&#10;Dhan Sakhi" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="350" width="130" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Your AI Wealth Advisor" style="text;html=1;align=center;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="385" width="130" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Select Language:" style="text;html=1;align=center;fontSize=9;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="410" width="130" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="हिन्दी" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="295" y="430" width="55" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="English" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="357" y="430" width="55" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="தமிழ்" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="419" y="430" width="55" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="తెలుగు" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="295" y="460" width="55" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="বাংলা" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="357" y="460" width="55" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="मराठी" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="419" y="460" width="55" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Continue →" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="315" y="510" width="140" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Screen 1: Welcome" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="315" y="650" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="200" width="230" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="← Dhan Sakhi 📊" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="575" y="235" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="👩‍💼" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#00bcd4;fontSize=28;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="270" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="〰️ speaking..." style="text;html=1;align=center;fontSize=8;fontColor=#00bcd4;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="352" width="80" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="🔍 research  ✅ compliance  📈 portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;fontSize=7;strokeColor=#2e7d32;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="370" width="170" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="नमस्ते राजेश जी! 🙏&#10;आपका पोर्टफोलियो ₹8,45,230&#10;पर है (+17.1%)&#10;किसमें मदद करूं?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="395" width="165" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="[Portfolio] [Goals] [Invest]" style="text;html=1;align=center;fontSize=8;fontColor=#1565c0;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="465" width="150" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="🎤  Type or speak..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="490" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="▶" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="715" y="490" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Screen 2: Avatar Chat" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="595" y="650" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="200" width="230" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="← Portfolio Dashboard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="855" y="235" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="₹8,45,230&#10;+17.1% (₹1,23,450)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0d47a1;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="865" y="268" width="170" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Asset Allocation&#10;████████░░ Equity 57%&#10;██████░░░░ Debt 33%&#10;██░░░░░░░░ Gold 10%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="865" y="322" width="170" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Holdings:&#10;Axis Bluechip    +22.4%&#10;HDFC Mid-Cap    +31.2%&#10;SBI Gilt Fund     +7.8%&#10;ICICI Gold ETF  +12.5%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="865" y="395" width="170" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="AI Health Score: 90/100 ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="865" y="478" width="170" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="🎤 Ask about portfolio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="510" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Screen 3: Portfolio" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="650" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1110" y="200" width="230" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="← Recommendation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="1135" y="235" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="👩‍💼 Avatar says:&#10;&quot;Based on your home goal&#10; in 5 years, I recommend:&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1145" y="268" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="📈 ICICI Balanced Advantage&#10;SIP: ₹8,000/month&#10;Duration: 5 years&#10;Expected: ₹6.2L - ₹7.8L&#10;Risk: ██████░░ Moderate&#10;Rating: ★★★★★ (5/5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1145" y="325" width="170" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Why this fund?&#10;✓ Matches moderate risk&#10;✓ Strong 5-yr track record&#10;✓ Low expense ratio (0.89%)&#10;✓ SEBI compliant ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1145" y="423" width="170" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="✓ Invest Now" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1150" y="507" width="75" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Compare" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="1232" y="507" width="55" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Ask" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="1290" y="507" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="Screen 4: Recommendation" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="1150" y="650" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="shape=mxgraph.android.phone2;strokeColor=#1a237e;fillColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="1390" y="200" width="230" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="← Financial Goals" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="1415" y="235" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="🏠 Home Purchase&#10;Target: ₹50,00,000 | 5 years&#10;████████░░ 65% on track" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1420" y="270" width="170" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="🎓 Child Education&#10;Target: ₹20,00,000 | 12 years&#10;████░░░░░░ 35% on track" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1420" y="335" width="170" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="🏖️ Retirement&#10;Target: ₹3,00,00,000 | 25 years&#10;██░░░░░░░░ 18% on track" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1420" y="400" width="170" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="👩‍💼 AI Insight:&#10;&quot;Increase monthly SIP by&#10; ₹5,000 to meet all goals&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=8;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="1420" y="468" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="🎤 Discuss Goals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontSize=9;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="525" width="130" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Screen 5: Goals" style="text;html=1;align=center;fontSize=10;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="1440" y="650" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;entryX=0;entryY=0.5;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="500" y="420" as="sourcePoint"/>
+                        <mxPoint x="550" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="780" y="420" as="sourcePoint"/>
+                        <mxPoint x="830" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1060" y="420" as="sourcePoint"/>
+                        <mxPoint x="1110" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1340" y="420" as="sourcePoint"/>
+                        <mxPoint x="1390" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>

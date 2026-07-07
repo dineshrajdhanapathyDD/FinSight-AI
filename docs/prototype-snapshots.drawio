@@ -1,199 +1,164 @@
-<mxfile host="app.diagrams.net" modified="2026-07-07T12:00:00.000Z" agent="FinSight AI">
-  <diagram id="snapshots" name="Prototype Snapshots - Demo Flow">
-    <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="900" math="0" shadow="1">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-
-        <!-- Title -->
-        <mxCell id="title" value="FinSight AI — Prototype Demo Flow (10 Steps)" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="500" y="10" width="500" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 1 -->
-        <mxCell id="step1" value="1️⃣ LOGIN&#xa;&#xa;Customer authenticates&#xa;via IDBI credentials&#xa;(Biometric/PIN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="30" y="70" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step1-img" value="🔐" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="80" y="140" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 2 -->
-        <mxCell id="step2" value="2️⃣ LANGUAGE&#xa;&#xa;Select preferred&#xa;language from&#xa;12+ Indian languages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="210" y="70" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step2-img" value="🌐" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="260" y="140" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 3 -->
-        <mxCell id="step3" value="3️⃣ AVATAR GREETS&#xa;&#xa;AI Avatar welcomes&#xa;customer by name&#xa;in chosen language" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="390" y="70" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step3-img" value="👩‍💼" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="440" y="140" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 4 -->
-        <mxCell id="step4" value="4️⃣ VOICE INPUT&#xa;&#xa;Customer speaks&#xa;naturally in their&#xa;language" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="570" y="70" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step4-img" value="🎤" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="620" y="140" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 5 -->
-        <mxCell id="step5" value="5️⃣ PORTFOLIO&#xa;&#xa;Agents analyze&#xa;holdings, risk,&#xa;goals in background" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="750" y="70" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step5-img" value="📊" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="800" y="140" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Arrows Row 1 -->
-        <mxCell id="arr1" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="180" y="130" as="sourcePoint" />
-            <mxPoint x="210" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arr2" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="360" y="130" as="sourcePoint" />
-            <mxPoint x="390" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arr3" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="540" y="130" as="sourcePoint" />
-            <mxPoint x="570" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arr4" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="720" y="130" as="sourcePoint" />
-            <mxPoint x="750" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Step 6 -->
-        <mxCell id="step6" value="6️⃣ RESEARCH&#xa;&#xa;Research Agent&#xa;fetches real-time&#xa;market data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="30" y="260" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step6-img" value="🔍" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="80" y="330" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 7 -->
-        <mxCell id="step7" value="7️⃣ RECOMMENDATION&#xa;&#xa;Amazon Nova generates&#xa;personalized advice&#xa;with reasoning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="210" y="260" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step7-img" value="🤖" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="260" y="330" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 8 -->
-        <mxCell id="step8" value="8️⃣ COMPLIANCE&#xa;&#xa;Compliance Agent&#xa;validates SEBI&#xa;suitability ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;strokeColor=#1b5e20;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="390" y="260" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step8-img" value="✅" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="440" y="330" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 9 -->
-        <mxCell id="step9" value="9️⃣ EXECUTION&#xa;&#xa;Customer approves,&#xa;Execution Agent&#xa;places order" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="570" y="260" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step9-img" value="⚡" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="620" y="330" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Step 10 -->
-        <mxCell id="step10" value="🔟 CONFIRMATION&#xa;&#xa;Avatar confirms&#xa;transaction with&#xa;summary + next steps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="750" y="260" width="150" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="step10-img" value="🎉" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="800" y="330" width="50" height="40" as="geometry" />
-        </mxCell>
-
-        <!-- Arrows Row 2 -->
-        <mxCell id="arr5" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="180" y="320" as="sourcePoint" />
-            <mxPoint x="210" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arr6" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="360" y="320" as="sourcePoint" />
-            <mxPoint x="390" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arr7" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="540" y="320" as="sourcePoint" />
-            <mxPoint x="570" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arr8" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="720" y="320" as="sourcePoint" />
-            <mxPoint x="750" y="320" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Connector from row 1 to row 2 -->
-        <mxCell id="arr-down" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;curved=1;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="825" y="190" as="sourcePoint" />
-            <mxPoint x="105" y="260" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="900" y="230" />
-              <mxPoint x="50" y="230" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-
-        <!-- Performance Metrics Box -->
-        <mxCell id="perf-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#333333;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="440" width="870" height="180" as="geometry" />
-        </mxCell>
-        <mxCell id="perf-title" value="Prototype Performance Benchmarks" style="text;html=1;align=left;fontSize=12;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-          <mxGeometry x="50" y="450" width="300" height="25" as="geometry" />
-        </mxCell>
-
-        <mxCell id="m1" value="⏱️ Avatar Response&#xa;Latency: &lt;3 sec" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="50" y="485" width="120" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="m2" value="🎤 Voice Recognition&#xa;Accuracy: &gt;95%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="185" y="485" width="120" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="m3" value="💡 Recommendation&#xa;Relevance: &gt;90%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="320" y="485" width="120" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="m4" value="✅ SEBI Compliance&#xa;Rate: 100%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="455" y="485" width="120" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="m5" value="🌐 Languages&#xa;Supported: 12+" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="590" y="485" width="120" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="m6" value="👥 Concurrent&#xa;Users: 100K+" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="725" y="485" width="120" height="45" as="geometry" />
-        </mxCell>
-
-        <mxCell id="m7" value="💰 Cost/Session: ₹3.2 (vs ₹500+ human RM) — 99% cost reduction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="545" width="400" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="m8" value="⬆️ Availability: 99.9% | Satisfaction: 4.6/5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;strokeColor=#1b5e20;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="545" width="300" height="30" as="geometry" />
-        </mxCell>
-
-        <!-- Load test -->
-        <mxCell id="load" value="Load Test Results:  100 users → 2.1s | 500 users → 2.8s | 1000 users → 3.4s (0.5% errors)" style="text;html=1;align=left;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
-          <mxGeometry x="50" y="590" width="500" height="20" as="geometry" />
-        </mxCell>
-
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram id="snapshots" name="Prototype Snapshots - Demo Flow">
+        <mxGraphModel dx="536" dy="261" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="900" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="FinSight AI - Prototype Demo Flow (10 Steps)" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="200" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="1️⃣ LOGIN&#10;&#10;Customer authenticates&#10;via IDBI credentials&#10;(Biometric/PIN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="270" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="🔐" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="340" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="2️⃣ LANGUAGE&#10;&#10;Select preferred&#10;language from&#10;12+ Indian languages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="270" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="🌐" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="340" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="3️⃣ AVATAR GREETS&#10;&#10;AI Avatar welcomes&#10;customer by name&#10;in chosen language" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="270" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="👩‍💼" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="340" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="4️⃣ VOICE INPUT&#10;&#10;Customer speaks&#10;naturally in their&#10;language" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="270" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="🎤" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="780" y="340" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="5️⃣ PORTFOLIO&#10;&#10;Agents analyze&#10;holdings, risk,&#10;goals in background" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="910" y="270" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="📊" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="340" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340" y="330" as="sourcePoint"/>
+                        <mxPoint x="370" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="330" as="sourcePoint"/>
+                        <mxPoint x="550" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="700" y="330" as="sourcePoint"/>
+                        <mxPoint x="730" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="880" y="330" as="sourcePoint"/>
+                        <mxPoint x="910" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="6️⃣ RESEARCH&#10;&#10;Research Agent&#10;fetches real-time&#10;market data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="460" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="🔍" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="530" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="7️⃣ RECOMMENDATION&#10;&#10;Amazon Nova generates&#10;personalized advice&#10;with reasoning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="460" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="🤖" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="530" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="8️⃣ COMPLIANCE&#10;&#10;Compliance Agent&#10;validates SEBI&#10;suitability ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;strokeColor=#1b5e20;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="460" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="✅" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="530" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="9️⃣ EXECUTION&#10;&#10;Customer approves,&#10;Execution Agent&#10;places order" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="460" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="⚡" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="780" y="530" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="🔟 CONFIRMATION&#10;&#10;Avatar confirms&#10;transaction with&#10;summary + next steps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="910" y="460" width="150" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="🎉" style="text;html=1;align=center;fontSize=30;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="530" width="50" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="340" y="520" as="sourcePoint"/>
+                        <mxPoint x="370" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="520" as="sourcePoint"/>
+                        <mxPoint x="550" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="700" y="520" as="sourcePoint"/>
+                        <mxPoint x="730" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="880" y="520" as="sourcePoint"/>
+                        <mxPoint x="910" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="" style="endArrow=block;strokeColor=#00bcd4;strokeWidth=2;curved=1;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1060" y="430"/>
+                            <mxPoint x="210" y="430"/>
+                        </Array>
+                        <mxPoint x="985" y="390" as="sourcePoint"/>
+                        <mxPoint x="265" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#333333;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="640" width="870" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="Prototype Performance Benchmarks" style="text;html=1;align=left;fontSize=12;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="650" width="300" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="⏱️ Avatar Response&#10;Latency: &lt;3 sec" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="685" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="🎤 Voice Recognition&#10;Accuracy: &gt;95%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="345" y="685" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="💡 Recommendation&#10;Relevance: &gt;90%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="685" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="✅ SEBI Compliance&#10;Rate: 100%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="615" y="685" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="🌐 Languages&#10;Supported: 12+" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="750" y="685" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="👥 Concurrent&#10;Users: 100K+" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=9;" vertex="1" parent="1">
+                    <mxGeometry x="885" y="685" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="💰 Cost/Session: ₹3.2 (vs ₹500+ human RM) — 99% cost reduction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="745" width="400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="⬆️ Availability: 99.9% | Satisfaction: 4.6/5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;strokeColor=#1b5e20;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="745" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Load Test Results:  100 users → 2.1s | 500 users → 2.8s | 1000 users → 3.4s (0.5% errors)" style="text;html=1;align=left;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="790" width="500" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
