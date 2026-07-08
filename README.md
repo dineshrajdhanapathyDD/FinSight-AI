@@ -289,9 +289,23 @@ graph TB
 
 ---
 
+## Live Demo
+
+| Component | URL |
+|-----------|-----|
+| **Frontend App** | [http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com](http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com) |
+| **Backend API** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
+| **Health Check** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health) |
+
+---
+
 ## Quick Start
 
-### Option 1: Local Development (Recommended for Demo)
+### Option 1: Use Live Demo (Recommended)
+
+Visit the frontend URL above — no setup needed.
+
+### Option 2: Local Development
 
 #### Backend
 ```bash
@@ -316,7 +330,7 @@ npm run dev
 
 Open http://localhost:3000
 
-### Option 2: Docker
+### Option 3: Docker
 
 ```bash
 docker-compose up --build
@@ -326,18 +340,47 @@ Open http://localhost
 
 ---
 
-## Demo Without AWS Credentials
+## Deployment Architecture (Live on AWS)
+
+```
+┌──────────────┐         ┌────────────────────┐         ┌─────────────────┐
+│  S3 Static   │────────▶│  API Gateway (HTTP)│────────▶│  AWS Lambda     │
+│  Website     │         │  CORS enabled      │         │  FastAPI+Mangum │
+│  (React App) │         └────────────────────┘         └────────┬────────┘
+└──────────────┘                                                 │
+                                                    ┌────────────┼────────────┐
+                                                    │            │            │
+                                              ┌─────▼─────┐ ┌───▼─────┐ ┌───▼──────┐
+                                              │  Bedrock  │ │  Polly  │ │  Fallback│
+                                              │ Nova Lite │ │  Neural │ │  Engine  │
+                                              │  (LLM)   │ │  (TTS)  │ │  (Demo)  │
+                                              └───────────┘ └─────────┘ └──────────┘
+```
+
+| AWS Service | Role | Cost |
+|-------------|------|------|
+| **S3** | Frontend static hosting | ~$0.02/month |
+| **Lambda** | Backend compute (512MB, 30s timeout) | Pay-per-request (~$0) |
+| **API Gateway** | HTTP API routing + CORS | Free tier (1M requests) |
+| **Bedrock (Nova Lite)** | AI conversation + reasoning | ~$0.001/request |
+| **Polly Neural** | Text-to-speech (12+ languages) | $4/1M chars |
+
+**Total monthly cost for demo: < $1**
+
+---
+
+## Demo Without AWS Credentials (Local Mode)
 
 The app works **fully without AWS credentials** using intelligent fallback:
 
-| Feature | With AWS | Without AWS (Demo Mode) |
-|---------|----------|------------------------|
+| Feature | With AWS (Production) | Without AWS (Local Demo) |
+|---------|----------------------|--------------------------|
 | Chat AI | Amazon Bedrock Nova Lite/Pro | Context-aware local responses |
 | Voice Input | AWS Transcribe | Browser Web Speech API |
 | Voice Output | Amazon Polly Neural | Browser Speech Synthesis |
 | Avatar Video | D-ID API | CSS animated avatar |
 
-This means you can demo the full experience instantly without any setup.
+This means you can demo the full experience locally without any setup.
 
 ---
 
@@ -438,6 +481,17 @@ FinSight AI/
 | Rajesh Kumar | Moderate | Hindi | ₹8.45L |
 | Priya Sharma | Aggressive | English | ₹3.20L |
 | Venkatesh Iyer | Conservative | Tamil | ₹45.20L |
+
+---
+
+## Submission Links
+
+| Item | Link |
+|------|------|
+| **GitHub Repo** | [https://github.com/dineshrajdhanapathyDD/FinSight-AI](https://github.com/dineshrajdhanapathyDD/FinSight-AI) |
+| **Live Product** | [http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com](http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com) |
+| **API Endpoint** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
+| **Demo Video** | _To be added_ |
 
 ---
 
