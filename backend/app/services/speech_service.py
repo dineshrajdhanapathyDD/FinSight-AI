@@ -16,18 +16,14 @@ except Exception:
     AWS_SPEECH_AVAILABLE = False
 
 
-# Language to Polly voice mapping
+# Language to Polly voice mapping (only en-IN and hi-IN supported by Polly)
 VOICE_MAP = {
-    "en": "Kajal",      # Indian English neural voice
-    "hi": "Kajal",      # Hindi neural voice
-    "ta": "Kajal",      # Fallback
-    "te": "Kajal",
-    "bn": "Kajal",
-    "mr": "Kajal",
-    "gu": "Kajal",
-    "kn": "Kajal",
-    "ml": "Kajal",
+    "en": {"voice_id": "Kajal", "lang_code": "en-IN"},
+    "hi": {"voice_id": "Kajal", "lang_code": "hi-IN"},
 }
+
+# Languages supported by Polly
+POLLY_SUPPORTED_LANGS = {"en", "hi"}
 
 # Language code mapping for Transcribe
 TRANSCRIBE_LANG_MAP = {
@@ -44,19 +40,24 @@ TRANSCRIBE_LANG_MAP = {
 
 
 async def text_to_speech(text: str, language: str = "en") -> Optional[str]:
-    """Convert text to speech using Amazon Polly. Returns base64 audio."""
+    """Convert text to speech using Amazon Polly. Returns base64 audio.
+    Only supports en and hi - other languages use browser Web Speech API on frontend.
+    """
     if not AWS_SPEECH_AVAILABLE or not settings.aws_access_key_id:
-        # Return None - frontend will use Web Speech API as fallback
+        return None
+
+    # Polly only supports en-IN and hi-IN for Indian voices
+    if language not in POLLY_SUPPORTED_LANGS:
         return None
 
     try:
-        voice_id = VOICE_MAP.get(language, "Kajal")
+        voice_config = VOICE_MAP.get(language, VOICE_MAP["en"])
         response = polly_client.synthesize_speech(
             Text=text,
             OutputFormat="mp3",
-            VoiceId=voice_id,
+            VoiceId=voice_config["voice_id"],
             Engine="neural",
-            LanguageCode=TRANSCRIBE_LANG_MAP.get(language, "en-IN"),
+            LanguageCode=voice_config["lang_code"],
         )
         audio_stream = response["AudioStream"].read()
         return base64.b64encode(audio_stream).decode("utf-8")

@@ -27,6 +27,16 @@ export default function ChatPage({ customer, language }) {
     handleSend('hello')
   }, [])
 
+  // Preload browser voices (Chrome loads them asynchronously)
+  useEffect(() => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.getVoices()
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices()
+      }
+    }
+  }, [])
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
@@ -54,7 +64,7 @@ export default function ChatPage({ customer, language }) {
         { role: 'assistant', content: response.response, agents: response.agents_used },
       ])
 
-      if (!isMuted) speakText(response.response)
+      if (!isMuted) speakText(response.response, response.audio_url)
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -66,13 +76,44 @@ export default function ChatPage({ customer, language }) {
     }
   }
 
-  const speakText = (text) => {
+  const speakText = (text, audioBase64) => {
+    // If backend returned Polly audio (base64 mp3), use that - better multilingual support
+    if (audioBase64) {
+      const audio = new Audio(`data:audio/mp3;base64,${audioBase64}`)
+      audio.onplay = () => setAvatarSpeaking(true)
+      audio.onended = () => setAvatarSpeaking(false)
+      audio.onerror = () => {
+        setAvatarSpeaking(false)
+        // Fallback to browser TTS if audio fails
+        speakWithBrowser(text)
+      }
+      audio.play()
+      return
+    }
+    // Fallback to browser Web Speech API
+    speakWithBrowser(text)
+  }
+
+  const speakWithBrowser = (text) => {
     if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel() // Cancel any ongoing speech
+      window.speechSynthesis.cancel()
       const utterance = new SpeechSynthesisUtterance(text)
-      const langMap = { en: 'en-IN', hi: 'hi-IN', ta: 'ta-IN', te: 'te-IN', bn: 'bn-IN' }
+      const langMap = {
+        en: 'en-IN', hi: 'hi-IN', ta: 'ta-IN', te: 'te-IN',
+        bn: 'bn-IN', mr: 'mr-IN', gu: 'gu-IN', kn: 'kn-IN', ml: 'ml-IN'
+      }
       utterance.lang = langMap[language] || 'en-IN'
       utterance.rate = 0.9
+
+      // Try to find a matching voice for the language
+      const voices = window.speechSynthesis.getVoices()
+      const targetLang = langMap[language] || 'en-IN'
+      const matchingVoice = voices.find(v => v.lang === targetLang) ||
+                            voices.find(v => v.lang.startsWith(targetLang.split('-')[0]))
+      if (matchingVoice) {
+        utterance.voice = matchingVoice
+      }
+
       utterance.onstart = () => setAvatarSpeaking(true)
       utterance.onend = () => setAvatarSpeaking(false)
       window.speechSynthesis.speak(utterance)
@@ -108,7 +149,7 @@ export default function ChatPage({ customer, language }) {
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
     const recognition = new SpeechRecognition()
-    const langMap = { en: 'en-IN', hi: 'hi-IN', ta: 'ta-IN', te: 'te-IN', bn: 'bn-IN', mr: 'mr-IN' }
+    const langMap = { en: 'en-IN', hi: 'hi-IN', ta: 'ta-IN', te: 'te-IN', bn: 'bn-IN', mr: 'mr-IN', gu: 'gu-IN', kn: 'kn-IN', ml: 'ml-IN' }
     recognition.lang = langMap[language] || 'en-IN'
     recognition.continuous = false
     recognition.interimResults = false
