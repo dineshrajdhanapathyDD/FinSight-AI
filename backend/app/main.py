@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
-from app.routers import chat, portfolio, speech, recommendations, avatar
+from app.routers import chat, portfolio, speech, recommendations, avatar, auth
 
 settings = get_settings()
 
@@ -24,6 +24,7 @@ app.include_router(portfolio.router, prefix="/api/portfolio", tags=["Portfolio"]
 app.include_router(speech.router, prefix="/api/speech", tags=["Speech"])
 app.include_router(recommendations.router, prefix="/api/recommendations", tags=["Recommendations"])
 app.include_router(avatar.router, prefix="/api/avatar", tags=["Avatar"])
+app.include_router(auth.router, prefix="/api/auth", tags=["Auth"])
 
 
 @app.get("/")

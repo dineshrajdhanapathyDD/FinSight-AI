@@ -142,7 +142,7 @@ export default function ChatPage({ customer, language }) {
   return (
     <div className="h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Header with Back + Voice controls */}
-      <div className="bg-gradient-to-r from-idbi-primary to-idbi-secondary px-4 py-3 flex items-center justify-between shadow-lg">
+      <div className="bg-gradient-to-r from-idbi-accent to-idbi-primary px-4 py-3 flex items-center justify-between shadow-lg">
         <button onClick={handleBack} className="text-white/90 hover:text-white flex items-center gap-1 text-sm">
           <ArrowLeft size={18} />
           Back

@@ -5,11 +5,16 @@ export default {
     extend: {
       colors: {
         idbi: {
-          primary: '#1a237e',
-          secondary: '#0d47a1',
-          accent: '#00bcd4',
-          gold: '#ffc107',
-          light: '#e3f2fd',
+          primary: '#00857C',    // IDBI Teal/Green
+          secondary: '#006B64',  // Darker teal
+          accent: '#E87722',     // IDBI Orange
+          gold: '#F5A623',       // Gold/amber
+          light: '#E6F5F3',      // Light teal background
+          orange: '#E87722',     // Primary orange
+          'orange-light': '#FEF3E8', // Light orange bg
+          'orange-dark': '#C4621A',  // Dark orange
+          'teal-light': '#E6F5F3',   // Light teal bg
+          'teal-dark': '#004D47',    // Very dark teal
         },
       },
       animation: {

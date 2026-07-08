@@ -35,14 +35,14 @@ export default function LandingPage({ user, onSelectCustomer, onSelectLanguage, 
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-idbi-primary via-idbi-secondary to-blue-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-idbi-primary via-idbi-secondary to-idbi-teal-dark flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         className="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-idbi-primary to-idbi-secondary p-6 text-center relative">
+        <div className="bg-gradient-to-r from-idbi-accent to-idbi-primary p-6 text-center relative">
           {/* Logout button */}
           <button
             onClick={onLogout}
@@ -54,8 +54,8 @@ export default function LandingPage({ user, onSelectCustomer, onSelectLanguage, 
             <span className="text-4xl">🧠</span>
           </div>
           <h1 className="text-2xl font-bold text-white">FinSight AI</h1>
-          <p className="text-blue-200 text-sm mt-1">Dhan Sakhi - Your AI Wealth Advisor</p>
-          {user && <p className="text-blue-300 text-xs mt-2">Logged in as: {user}</p>}
+          <p className="text-white/80 text-sm mt-1">Dhan Sakhi - Your AI Wealth Advisor</p>
+          {user && <p className="text-white/60 text-xs mt-2">Logged in as: {user}</p>}
         </div>
 
         <div className="p-6">

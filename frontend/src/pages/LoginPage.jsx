@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { sendOtp, verifyOtp } from '../api'
 
 export default function LoginPage({ onLogin }) {
-  const [step, setStep] = useState('email') // email | otp
+  const [step, setStep] = useState('email')
   const [email, setEmail] = useState('')
   const [otp, setOtp] = useState('')
-  const [generatedOtp, setGeneratedOtp] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [otpHint, setOtpHint] = useState('')
 
-  const handleSendOtp = (e) => {
+  const handleSendOtp = async (e) => {
     e.preventDefault()
     setError('')
     if (!email || !email.includes('@')) {
@@ -17,46 +18,54 @@ export default function LoginPage({ onLogin }) {
       return
     }
     setLoading(true)
-    // Generate 6-digit OTP (demo - in production use SES/SNS)
-    const code = Math.floor(100000 + Math.random() * 900000).toString()
-    setGeneratedOtp(code)
-    // Simulate sending delay
-    setTimeout(() => {
-      setLoading(false)
+    try {
+      const result = await sendOtp(email)
+      if (result.otp_hint) setOtpHint(result.otp_hint)
       setStep('otp')
-    }, 1000)
+    } catch (err) {
+      setError('Failed to send OTP. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
-  const handleVerifyOtp = (e) => {
+  const handleVerifyOtp = async (e) => {
     e.preventDefault()
     setError('')
     if (otp.length !== 6) {
       setError('Please enter 6-digit OTP')
       return
     }
-    if (otp === generatedOtp || otp === '123456') {
-      // Demo: accept generated OTP or 123456 as universal
-      onLogin(email)
-    } else {
-      setError('Invalid OTP. Try again or use 123456 for demo.')
+    setLoading(true)
+    try {
+      const result = await verifyOtp(email, otp)
+      if (result.verified) {
+        onLogin(email)
+      } else {
+        setError('Invalid OTP. Please try again.')
+      }
+    } catch (err) {
+      setError('Verification failed. Please try again.')
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-idbi-primary via-idbi-secondary to-blue-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-idbi-primary via-idbi-secondary to-idbi-teal-dark flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden"
       >
-        {/* Header */}
-        <div className="bg-gradient-to-r from-idbi-primary to-idbi-secondary p-6 text-center">
-          <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+        {/* Header - Orange + Teal gradient */}
+        <div className="bg-gradient-to-r from-idbi-accent to-idbi-primary p-6 text-center">
+          <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center backdrop-blur-sm">
             <span className="text-4xl">🧠</span>
           </div>
           <h1 className="text-2xl font-bold text-white">FinSight AI</h1>
-          <p className="text-blue-200 text-sm mt-1">Dhan Sakhi - Your AI Wealth Advisor</p>
-          <p className="text-blue-300 text-xs mt-2">IDBI Bank | Digital Wealth Management</p>
+          <p className="text-white/80 text-sm mt-1">Dhan Sakhi - Your AI Wealth Advisor</p>
+          <p className="text-white/60 text-xs mt-2">IDBI Bank | Digital Wealth Management</p>
         </div>
 
         <div className="p-6">
@@ -67,7 +76,7 @@ export default function LoginPage({ onLogin }) {
               onSubmit={handleSendOtp}
             >
               <h2 className="text-lg font-semibold text-gray-800 mb-2">Welcome Back</h2>
-              <p className="text-sm text-gray-500 mb-6">Enter your email to receive a one-time password</p>
+              <p className="text-sm text-gray-500 mb-6">Enter your email to receive a secure one-time password</p>
 
               <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
               <input
@@ -88,12 +97,19 @@ export default function LoginPage({ onLogin }) {
                 disabled={loading}
                 className="btn-primary w-full disabled:opacity-50"
               >
-                {loading ? 'Sending OTP...' : 'Send OTP'}
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending OTP...
+                  </span>
+                ) : 'Send OTP'}
               </button>
 
-              <p className="text-xs text-gray-400 text-center mt-4">
-                Demo: Any email works. Use OTP <span className="font-mono font-bold">123456</span>
-              </p>
+              <div className="mt-4 p-3 bg-idbi-teal-light rounded-lg">
+                <p className="text-xs text-idbi-primary text-center">
+                  🔒 Secured with email-based OTP authentication
+                </p>
+              </div>
             </motion.form>
           )}
 
@@ -104,46 +120,67 @@ export default function LoginPage({ onLogin }) {
               onSubmit={handleVerifyOtp}
             >
               <h2 className="text-lg font-semibold text-gray-800 mb-2">Verify OTP</h2>
-              <p className="text-sm text-gray-500 mb-1">
-                Enter the 6-digit code sent to
-              </p>
-              <p className="text-sm font-medium text-idbi-primary mb-6">{email}</p>
+              <p className="text-sm text-gray-500 mb-1">Enter the 6-digit code sent to</p>
+              <p className="text-sm font-medium text-idbi-primary mb-4">{email}</p>
 
-              <label className="block text-sm font-medium text-gray-700 mb-1">One-Time Password</label>
               <input
                 type="text"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
-                placeholder="Enter 6-digit OTP"
-                className="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:border-idbi-accent focus:ring-2 focus:ring-idbi-accent/20 outline-none text-sm text-center text-xl tracking-widest mb-4"
+                placeholder="------"
+                className="w-full px-4 py-4 bg-gray-50 rounded-xl border border-gray-200 focus:border-idbi-accent focus:ring-2 focus:ring-idbi-accent/20 outline-none text-center text-2xl tracking-[0.5em] font-mono mb-4"
                 maxLength={6}
                 autoFocus
               />
 
-              {/* Show OTP for demo purposes */}
-              <div className="bg-green-50 border border-green-200 rounded-lg p-2 mb-4">
-                <p className="text-xs text-green-700 text-center">
-                  Demo OTP: <span className="font-mono font-bold text-lg">{generatedOtp}</span>
-                </p>
-              </div>
+              {/* OTP Hint for demo */}
+              {otpHint && (
+                <div className="bg-idbi-orange-light border border-idbi-accent/30 rounded-lg p-3 mb-4">
+                  <p className="text-xs text-idbi-orange-dark text-center">
+                    Demo OTP: <span className="font-mono font-bold text-base">{otpHint}</span>
+                  </p>
+                </div>
+              )}
 
               {error && (
                 <p className="text-red-500 text-xs mb-3">{error}</p>
               )}
 
-              <button type="submit" className="btn-primary w-full">
-                Verify & Login
+              <button
+                type="submit"
+                disabled={loading || otp.length < 6}
+                className="btn-primary w-full disabled:opacity-50"
+              >
+                {loading ? 'Verifying...' : 'Verify & Login'}
               </button>
 
-              <button
-                type="button"
-                onClick={() => { setStep('email'); setOtp(''); setError(''); }}
-                className="w-full text-center text-sm text-idbi-primary mt-3 hover:underline"
-              >
-                Change email
-              </button>
+              <div className="flex items-center justify-between mt-4">
+                <button
+                  type="button"
+                  onClick={() => { setStep('email'); setOtp(''); setError(''); }}
+                  className="text-sm text-idbi-primary hover:underline"
+                >
+                  Change email
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSendOtp}
+                  className="text-sm text-idbi-accent hover:underline"
+                >
+                  Resend OTP
+                </button>
+              </div>
             </motion.form>
           )}
+        </div>
+
+        {/* Footer */}
+        <div className="px-6 pb-4">
+          <div className="border-t border-gray-100 pt-3 flex items-center justify-center gap-2">
+            <div className="w-2 h-2 bg-idbi-accent rounded-full" />
+            <div className="w-2 h-2 bg-idbi-primary rounded-full" />
+            <span className="text-xs text-gray-400 ml-2">IDBI Innovate 2026</span>
+          </div>
         </div>
       </motion.div>
     </div>
