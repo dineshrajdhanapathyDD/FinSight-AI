@@ -36,6 +36,10 @@ FinSight AI (Dhan Sakhi) is an AI-powered digital wealth management application 
 
 ## System Architecture
 
+
+![architecture.drawio.png](https://images.tomarkdown.dev/uploaded/relgufjlufxjb11e.png)
+
+
 ### High-Level Architecture
 
 ```mermaid
@@ -119,6 +123,9 @@ graph TB
 
 ### Authentication Flow (Email OTP)
 
+![process-flow.drawio.png](https://images.tomarkdown.dev/uploaded/lmwjs8vk38w3u5ns.png)
+
+
 ```mermaid
 sequenceDiagram
     participant U as 👤 User
@@ -182,6 +189,10 @@ sequenceDiagram
     AV-->>App: Lip-synced video
     App-->>C: 🗣️👩‍💼 Avatar speaks response
 ```
+
+## Use-case diagram
+
+![use-case.drawio.png](https://images.tomarkdown.dev/uploaded/zqsxoe5n2qnzquab.png)
 
 ### Agentic AI Architecture
 
@@ -260,6 +271,20 @@ graph TB
     LAMBDA --> BEDROCK
     LAMBDA --> POLLY
 ```
+
+
+## Snapshots of the prototype
+
+![prototype-snapshots.drawio.png](https://images.tomarkdown.dev/uploaded/tjpnnpe2ebmrtkbe.png)
+
+
+
+## Wireframes/Mock diagrams of the proposed solution
+
+![wireframes.drawio.png](https://images.tomarkdown.dev/uploaded/x4ojhqrj1362jowy.png)
+
+
+
 
 ---
 
