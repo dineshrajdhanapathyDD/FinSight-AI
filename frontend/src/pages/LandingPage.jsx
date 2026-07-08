@@ -20,7 +20,7 @@ const DEMO_CUSTOMERS = [
   { id: 'CUST003', name: 'Venkatesh Iyer', profile: 'Conservative | Business Owner' },
 ]
 
-export default function LandingPage({ onSelectCustomer, onSelectLanguage }) {
+export default function LandingPage({ user, onSelectCustomer, onSelectLanguage, onLogout }) {
   const [step, setStep] = useState(1)
   const [selectedLang, setSelectedLang] = useState('en')
   const [selectedCustomer, setSelectedCustomer] = useState(null)
@@ -42,13 +42,20 @@ export default function LandingPage({ onSelectCustomer, onSelectLanguage }) {
         className="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-idbi-primary to-idbi-secondary p-6 text-center">
+        <div className="bg-gradient-to-r from-idbi-primary to-idbi-secondary p-6 text-center relative">
+          {/* Logout button */}
+          <button
+            onClick={onLogout}
+            className="absolute top-4 right-4 text-white/70 hover:text-white text-xs bg-white/10 px-2 py-1 rounded-full"
+          >
+            Logout
+          </button>
           <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
             <span className="text-4xl">🧠</span>
           </div>
           <h1 className="text-2xl font-bold text-white">FinSight AI</h1>
           <p className="text-blue-200 text-sm mt-1">Dhan Sakhi - Your AI Wealth Advisor</p>
-          <p className="text-blue-300 text-xs mt-2">IDBI Bank | Track 01: Digital Wealth Management</p>
+          {user && <p className="text-blue-300 text-xs mt-2">Logged in as: {user}</p>}
         </div>
 
         <div className="p-6">

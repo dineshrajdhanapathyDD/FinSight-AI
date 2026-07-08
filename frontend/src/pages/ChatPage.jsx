@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Mic, MicOff, Send, BarChart3, Target, TrendingUp } from 'lucide-react'
+import { Mic, MicOff, Send, BarChart3, Target, TrendingUp, ArrowLeft, Volume2, VolumeX } from 'lucide-react'
 import { sendMessage } from '../api'
 import Avatar from '../components/Avatar'
 import ChatBubble from '../components/ChatBubble'
@@ -13,6 +13,7 @@ export default function ChatPage({ customer, language }) {
   const [isRecording, setIsRecording] = useState(false)
   const [sessionId, setSessionId] = useState(null)
   const [avatarSpeaking, setAvatarSpeaking] = useState(false)
+  const [isMuted, setIsMuted] = useState(false)
   const [agentsActive, setAgentsActive] = useState([])
   const messagesEndRef = useRef(null)
   const recognitionRef = useRef(null)
@@ -23,7 +24,6 @@ export default function ChatPage({ customer, language }) {
       navigate('/')
       return
     }
-    // Send initial greeting
     handleSend('hello')
   }, [])
 
@@ -37,7 +37,6 @@ export default function ChatPage({ customer, language }) {
 
     if (!text) setInput('')
 
-    // Add user message
     if (text !== 'hello') {
       setMessages((prev) => [...prev, { role: 'user', content: messageText }])
     }
@@ -46,28 +45,16 @@ export default function ChatPage({ customer, language }) {
     setAgentsActive(['research_agent', 'compliance_agent', 'portfolio_agent'])
 
     try {
-      const response = await sendMessage(
-        customer.id,
-        messageText,
-        language,
-        sessionId
-      )
-
+      const response = await sendMessage(customer.id, messageText, language, sessionId)
       setSessionId(response.session_id)
       setAgentsActive(response.agents_used || [])
 
-      // Add assistant message
       setMessages((prev) => [
         ...prev,
-        {
-          role: 'assistant',
-          content: response.response,
-          agents: response.agents_used,
-        },
+        { role: 'assistant', content: response.response, agents: response.agents_used },
       ])
 
-      // Speak response
-      speakText(response.response)
+      if (!isMuted) speakText(response.response)
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -81,6 +68,7 @@ export default function ChatPage({ customer, language }) {
 
   const speakText = (text) => {
     if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel() // Cancel any ongoing speech
       const utterance = new SpeechSynthesisUtterance(text)
       const langMap = { en: 'en-IN', hi: 'hi-IN', ta: 'ta-IN', te: 'te-IN', bn: 'bn-IN' }
       utterance.lang = langMap[language] || 'en-IN'
@@ -89,6 +77,21 @@ export default function ChatPage({ customer, language }) {
       utterance.onend = () => setAvatarSpeaking(false)
       window.speechSynthesis.speak(utterance)
     }
+  }
+
+  const toggleVoice = () => {
+    if (isMuted) {
+      setIsMuted(false)
+    } else {
+      setIsMuted(true)
+      window.speechSynthesis.cancel()
+      setAvatarSpeaking(false)
+    }
+  }
+
+  const stopSpeaking = () => {
+    window.speechSynthesis.cancel()
+    setAvatarSpeaking(false)
   }
 
   const toggleRecording = () => {
@@ -114,7 +117,6 @@ export default function ChatPage({ customer, language }) {
       const transcript = event.results[0][0].transcript
       setInput(transcript)
       setIsRecording(false)
-      // Auto-send after voice input
       setTimeout(() => handleSend(transcript), 300)
     }
 
@@ -126,6 +128,11 @@ export default function ChatPage({ customer, language }) {
     setIsRecording(true)
   }
 
+  const handleBack = () => {
+    stopSpeaking()
+    navigate('/')
+  }
+
   const quickActions = [
     { icon: <BarChart3 size={16} />, label: 'Portfolio', msg: 'Show my portfolio' },
     { icon: <Target size={16} />, label: 'Goals', msg: 'Show my financial goals' },
@@ -134,26 +141,55 @@ export default function ChatPage({ customer, language }) {
 
   return (
     <div className="h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
-      {/* Header */}
+      {/* Header with Back + Voice controls */}
       <div className="bg-gradient-to-r from-idbi-primary to-idbi-secondary px-4 py-3 flex items-center justify-between shadow-lg">
-        <button onClick={() => navigate('/')} className="text-white/80 hover:text-white text-sm">
-          ← Back
+        <button onClick={handleBack} className="text-white/90 hover:text-white flex items-center gap-1 text-sm">
+          <ArrowLeft size={18} />
+          Back
         </button>
         <div className="text-center">
           <h1 className="text-white font-semibold text-sm">Dhan Sakhi</h1>
           <p className="text-blue-200 text-xs">AI Wealth Advisor</p>
         </div>
-        <button onClick={() => navigate('/portfolio')} className="text-white/80 hover:text-white">
-          <BarChart3 size={20} />
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Voice Play/Pause */}
+          <button
+            onClick={toggleVoice}
+            className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
+              isMuted ? 'bg-red-500/20 text-red-300' : 'bg-white/20 text-white'
+            }`}
+            title={isMuted ? 'Unmute voice' : 'Mute voice'}
+          >
+            {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+          </button>
+          {/* Portfolio */}
+          <button onClick={() => navigate('/portfolio')} className="text-white/80 hover:text-white">
+            <BarChart3 size={20} />
+          </button>
+        </div>
       </div>
 
       {/* Avatar Section */}
-      <div className="flex-shrink-0 py-4">
+      <div className="flex-shrink-0 py-3">
         <Avatar speaking={avatarSpeaking} agentsActive={agentsActive} />
+        {/* Stop Speaking Button (visible when avatar is speaking) */}
+        {avatarSpeaking && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="flex justify-center mt-2"
+          >
+            <button
+              onClick={stopSpeaking}
+              className="px-4 py-1.5 bg-red-50 border border-red-200 text-red-600 rounded-full text-xs font-medium hover:bg-red-100 transition-all"
+            >
+              Stop Speaking
+            </button>
+          </motion.div>
+        )}
       </div>
 
-      {/* Agent Activity Indicator */}
+      {/* Agent Activity */}
       <AnimatePresence>
         {agentsActive.length > 0 && isLoading && (
           <motion.div
@@ -224,7 +260,7 @@ export default function ChatPage({ customer, language }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-            placeholder={language === 'hi' ? 'यहाँ टाइप करें...' : 'Type your message...'}
+            placeholder={language === 'hi' ? 'टाइप करें या बोलें...' : 'Type or speak...'}
             className="flex-1 px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:border-idbi-accent focus:ring-2 focus:ring-idbi-accent/20 outline-none text-sm"
           />
           <button

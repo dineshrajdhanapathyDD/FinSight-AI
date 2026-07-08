@@ -293,7 +293,8 @@ graph TB
 
 | Component | URL |
 |-----------|-----|
-| **Frontend App** | [http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com](http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com) |
+| **Frontend App** | [https://dgmfyimmjupnd.cloudfront.net](https://dgmfyimmjupnd.cloudfront.net) |
+| **Frontend (S3 fallback)** | [http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com](http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com) |
 | **Backend API** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
 | **Health Check** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health) |
 
@@ -489,7 +490,7 @@ FinSight AI/
 | Item | Link |
 |------|------|
 | **GitHub Repo** | [https://github.com/dineshrajdhanapathyDD/FinSight-AI](https://github.com/dineshrajdhanapathyDD/FinSight-AI) |
-| **Live Product** | [http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com](http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com) |
+| **Live Product** | [https://dgmfyimmjupnd.cloudfront.net](https://dgmfyimmjupnd.cloudfront.net) |
 | **API Endpoint** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
 | **Demo Video** | _To be added_ |
 

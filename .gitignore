@@ -23,3 +23,9 @@ Thumbs.db
 
 # Submission docs (private)
 idea.md
+
+# Lambda build artifacts
+backend/package/
+backend/linux-package/
+backend/*.zip
+test_api.py
