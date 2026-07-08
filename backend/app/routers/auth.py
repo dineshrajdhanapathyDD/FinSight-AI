@@ -40,26 +40,36 @@ async def send_otp(request: OtpRequest):
 
     # Try sending via AWS SES
     email_sent = False
-    if SES_AVAILABLE and settings.aws_access_key_id:
+    if SES_AVAILABLE:
         try:
             ses_client.send_email(
-                Source="noreply@finsight-ai.demo",
+                Source="finsight.ai.otp@gmail.com",
                 Destination={"ToAddresses": [email]},
                 Message={
-                    "Subject": {"Data": "FinSight AI - Your OTP Code"},
+                    "Subject": {"Data": "FinSight AI - Your Login OTP"},
                     "Body": {
                         "Html": {
                             "Data": f"""
-                            <div style="font-family: Arial; max-width: 400px; margin: 0 auto; padding: 20px;">
-                                <h2 style="color: #00857C;">FinSight AI - Dhan Sakhi</h2>
-                                <p>Your one-time password is:</p>
-                                <div style="background: #FEF3E8; border: 2px solid #E87722; border-radius: 12px; padding: 20px; text-align: center; margin: 20px 0;">
-                                    <span style="font-size: 32px; font-weight: bold; letter-spacing: 8px; color: #E87722;">{otp_code}</span>
+                            <div style="font-family: Arial, sans-serif; max-width: 450px; margin: 0 auto; padding: 30px; background: #ffffff;">
+                                <div style="text-align: center; margin-bottom: 20px;">
+                                    <h1 style="color: #00857C; margin: 0;">FinSight AI</h1>
+                                    <p style="color: #E87722; font-size: 14px; margin: 5px 0;">Dhan Sakhi - AI Wealth Advisor</p>
                                 </div>
-                                <p style="color: #666; font-size: 12px;">This code expires in 5 minutes. Do not share it with anyone.</p>
-                                <p style="color: #00857C; font-size: 12px;">IDBI Bank | Digital Wealth Management</p>
+                                <hr style="border: 1px solid #E6F5F3; margin: 20px 0;">
+                                <p style="color: #333; font-size: 14px;">Hello,</p>
+                                <p style="color: #333; font-size: 14px;">Your one-time password for login is:</p>
+                                <div style="background: linear-gradient(135deg, #FEF3E8, #E6F5F3); border: 2px solid #E87722; border-radius: 12px; padding: 25px; text-align: center; margin: 25px 0;">
+                                    <span style="font-size: 36px; font-weight: bold; letter-spacing: 10px; color: #E87722; font-family: monospace;">{otp_code}</span>
+                                </div>
+                                <p style="color: #666; font-size: 12px;">This code expires in <strong>5 minutes</strong>.</p>
+                                <p style="color: #666; font-size: 12px;">If you did not request this code, please ignore this email.</p>
+                                <hr style="border: 1px solid #E6F5F3; margin: 20px 0;">
+                                <p style="color: #00857C; font-size: 11px; text-align: center;">IDBI Bank | Digital Wealth Management | IDBI Innovate 2026</p>
                             </div>
                             """
+                        },
+                        "Text": {
+                            "Data": f"Your FinSight AI login OTP is: {otp_code}. This code expires in 5 minutes."
                         }
                     },
                 },
@@ -73,8 +83,7 @@ async def send_otp(request: OtpRequest):
         "status": "sent",
         "email": email,
         "email_delivered": email_sent,
-        "otp_hint": otp_code,  # Show in UI for demo (remove in production)
-        "message": "OTP sent successfully" if email_sent else "OTP generated (demo mode - shown in UI)",
+        "message": "OTP sent to your email" if email_sent else "OTP sent successfully",
         "expires_in": 300,
     }
 
@@ -100,8 +109,8 @@ async def verify_otp(request: OtpVerify):
 
     otp_data["attempts"] += 1
 
-    # Verify (accept actual OTP or universal demo code)
-    if request.otp == otp_data["code"] or request.otp == "123456":
+    # Verify (accept actual OTP only)
+    if request.otp == otp_data["code"]:
         del otp_store[email]
         return {
             "verified": True,

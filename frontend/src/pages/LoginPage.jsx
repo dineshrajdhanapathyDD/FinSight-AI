@@ -8,7 +8,6 @@ export default function LoginPage({ onLogin }) {
   const [otp, setOtp] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const [otpHint, setOtpHint] = useState('')
 
   const handleSendOtp = async (e) => {
     e.preventDefault()
@@ -19,8 +18,7 @@ export default function LoginPage({ onLogin }) {
     }
     setLoading(true)
     try {
-      const result = await sendOtp(email)
-      if (result.otp_hint) setOtpHint(result.otp_hint)
+      await sendOtp(email)
       setStep('otp')
     } catch (err) {
       setError('Failed to send OTP. Please try again.')
@@ -133,14 +131,12 @@ export default function LoginPage({ onLogin }) {
                 autoFocus
               />
 
-              {/* OTP Hint for demo */}
-              {otpHint && (
-                <div className="bg-idbi-orange-light border border-idbi-accent/30 rounded-lg p-3 mb-4">
-                  <p className="text-xs text-idbi-orange-dark text-center">
-                    Demo OTP: <span className="font-mono font-bold text-base">{otpHint}</span>
-                  </p>
-                </div>
-              )}
+              {/* Security notice */}
+              <div className="bg-idbi-teal-light border border-idbi-primary/20 rounded-lg p-3 mb-4">
+                <p className="text-xs text-idbi-primary text-center">
+                  🔒 A 6-digit OTP has been sent to your email. Check inbox/spam.
+                </p>
+              </div>
 
               {error && (
                 <p className="text-red-500 text-xs mb-3">{error}</p>

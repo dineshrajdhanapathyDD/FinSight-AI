@@ -6,305 +6,267 @@
 
 ---
 
+## Live Demo
+
+| Component | URL |
+|-----------|-----|
+| **Frontend App (HTTPS)** | [https://dgmfyimmjupnd.cloudfront.net](https://dgmfyimmjupnd.cloudfront.net) |
+| **Backend API** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
+| **Health Check** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health) |
+
+---
+
 ## Overview
 
 FinSight AI (Dhan Sakhi) is an AI-powered digital wealth management application featuring a photorealistic avatar that delivers personalized, scalable wealth advisory services through natural voice conversation in 12+ Indian languages.
 
 ### Key Features
 
-- 🗣️ **Multilingual Voice Conversation** — Hindi, Tamil, Telugu, Bengali, English + 7 more
+- � **Email OTP Authentication** — Real email-based OTP for secure login via AWS SES
+- �🗣️ **Multilingual Voice Conversation** — Hindi, Tamil, Telugu, Bengali, English + 7 more
 - 👩‍💼 **AI Avatar** — Animated, lip-synced digital advisor with emotional intelligence
 - 🤖 **Agentic AI** — Research, Compliance, and Portfolio agents work autonomously
 - 📊 **Portfolio Dashboard** — Real-time holdings, allocation, AI health score
 - 💡 **Personalized Recommendations** — SEBI-compliant, risk-profile aware
 - 🎯 **Goal-Based Planning** — Retirement, home purchase, education
-- 🔒 **Compliance Built-In** — Every recommendation validated before delivery
+- � **Voice Controls** — Play/Pause/Stop voice output at any time
 
 ---
 
 ## System Architecture
 
-### High-Level Architecture (Mermaid)
+### High-Level Architecture
 
 ```mermaid
 graph TB
-    subgraph Client["Client Layer"]
-        MA[📱 IDBI Mobile App<br/>React Native + Unity SDK]
-        WA[🌐 Web App<br/>React + Tailwind]
+    subgraph Client["🖥️ Client Layer"]
+        MA[📱 IDBI Mobile App<br/>React Native]
+        WA[🌐 Web App<br/>React + Tailwind CSS]
     end
 
-    subgraph CDN["Edge Layer"]
-        CF[☁️ Amazon CloudFront<br/>Global CDN]
+    subgraph Edge["☁️ Edge Layer"]
+        CF[Amazon CloudFront<br/>HTTPS + CDN]
     end
 
-    subgraph Gateway["API Layer"]
-        AG[🔀 Amazon API Gateway<br/>REST + WebSocket]
-        COG[🔐 Amazon Cognito<br/>Auth + MFA]
+    subgraph Auth["🔐 Authentication"]
+        SES[Amazon SES<br/>Email OTP Delivery]
+        OTP[OTP Service<br/>Generate + Verify]
     end
 
-    subgraph Compute["Application Layer"]
-        LAM[⚡ AWS Lambda / ECS Fargate<br/>FastAPI Microservices]
-        
-        subgraph Services["Microservices"]
-            SS[🎤 Speech Service]
-            CS[💬 Chat Service]
-            PS[📊 Portfolio Service]
-            AS[🎭 Avatar Service]
-            RS[💡 Recommendation Service]
-        end
+    subgraph Gateway["� API Layer"]
+        AG[Amazon API Gateway<br/>HTTP API + CORS]
     end
 
-    subgraph AI["AI / ML Layer"]
-        subgraph Agents["Agentic AI Orchestrator (LangGraph)"]
+    subgraph Compute["⚡ Serverless Compute"]
+        LAM[AWS Lambda<br/>FastAPI + Mangum]
+    end
+
+    subgraph Services["🧩 Microservices"]
+        AUTH[🔐 Auth Service]
+        CHAT[💬 Chat Service]
+        PORT[📊 Portfolio Service]
+        REC[💡 Recommendation Service]
+        SPE[🎤 Speech Service]
+        AVA[🎭 Avatar Service]
+    end
+
+    subgraph AI["🤖 AI/ML Layer"]
+        subgraph Agents["Agentic AI (LangGraph)"]
             RA[🔍 Research Agent]
             CA[✅ Compliance Agent]
             PA[📈 Portfolio Agent]
             EA[⚙️ Execution Agent]
-            PEA[🧠 Personalization Agent]
         end
-
-        subgraph Models["Foundation Models"]
-            NOVA[🤖 Amazon Nova Lite<br/>Conversational AI + Reasoning]
-            NOVAP[🧠 Amazon Nova Pro<br/>Complex Financial Analysis]
-            SM[📊 Amazon SageMaker<br/>Risk Models + Portfolio Optimization]
-        end
-
-        subgraph Speech["Speech AI"]
-            POL[🗣️ Amazon Polly Neural<br/>Text-to-Speech, 12+ Languages]
-            TRN[👂 Amazon Transcribe<br/>Speech-to-Text, Multilingual]
-        end
-
-        KB[📚 Bedrock Knowledge Bases<br/>Product Docs + Regulations + FAQs]
+        NOVA[Amazon Nova Lite<br/>Conversational AI]
+        NOVAP[Amazon Nova Pro<br/>Financial Analysis]
+        KB[Bedrock Knowledge Bases<br/>SEBI Regulations]
     end
 
-    subgraph Avatar["Avatar Engine"]
-        DID[🎭 D-ID / HeyGen API<br/>Photorealistic Avatar]
-        LS[👄 Lip-Sync Engine<br/>Audio2Face]
-        EM[😊 Emotion Detection<br/>Sentiment-Aware Expressions]
+    subgraph Speech["🗣️ Speech Layer"]
+        POL[Amazon Polly Neural<br/>TTS - 12+ Languages]
+        TRN[Amazon Transcribe<br/>STT - Multilingual]
     end
 
-    subgraph Data["Data Layer"]
-        DDB[(⚡ DynamoDB<br/>Sessions + Context)]
-        RDS[(🗄️ Amazon RDS<br/>Customer + Portfolio)]
-        S3[(📦 Amazon S3<br/>Documents + Models)]
-        RC[(🔴 ElastiCache Redis<br/>Cache + Real-time)]
+    subgraph Data["� Data Layer"]
+        DDB[(DynamoDB<br/>Sessions)]
+        RDS[(RDS PostgreSQL<br/>Portfolios)]
+        S3[(S3<br/>Assets)]
     end
 
-    subgraph External["External Integrations"]
-        IDBI[🏦 IDBI Core Banking<br/>Sandbox APIs]
-        MKT[📈 Market Data<br/>NSE / BSE APIs]
-        MF[📊 MF APIs<br/>BSE StarMF + AMFI]
-        AA[🔗 Account Aggregator<br/>Multi-bank Data]
+    subgraph External["🏦 Integrations"]
+        IDBI[IDBI Core Banking<br/>Sandbox APIs]
+        MKT[NSE/BSE<br/>Market Data]
+        MF[BSE StarMF<br/>MF APIs]
     end
 
     MA --> CF
     WA --> CF
     CF --> AG
-    AG --> COG
     AG --> LAM
     LAM --> Services
-    CS --> Agents
-    Agents --> Models
+    AUTH --> SES
+    AUTH --> OTP
+    CHAT --> Agents
+    Agents --> NOVA
+    Agents --> NOVAP
     Agents --> KB
-    SS --> Speech
-    AS --> Avatar
-    PS --> Data
-    RS --> Agents
+    SPE --> POL
+    SPE --> TRN
     Services --> Data
     Services --> External
-    NOVA --> RA
-    NOVA --> CA
-    NOVAP --> PA
 ```
 
-### Data Flow Architecture (Mermaid)
+### Authentication Flow (Email OTP)
 
 ```mermaid
 sequenceDiagram
-    participant C as 👤 Customer
-    participant App as 📱 Mobile App
-    participant GW as 🔀 API Gateway
-    participant Chat as 💬 Chat Service
-    participant STT as 👂 Transcribe
-    participant Orch as 🤖 Agent Orchestrator
-    participant RA as 🔍 Research Agent
-    participant CA as ✅ Compliance Agent
-    participant PA as 📈 Portfolio Agent
-    participant Nova as 🧠 Amazon Nova
-    participant TTS as 🗣️ Polly
-    participant Av as 🎭 Avatar Engine
+    participant U as 👤 User
+    participant App as 📱 Frontend
+    participant API as 🔀 API Gateway
+    participant Auth as � Auth Service
+    participant SES as � AWS SES
+    participant Store as 💾 OTP Store
 
-    C->>App: Speaks in Hindi 🎤
-    App->>GW: Audio Stream
-    GW->>STT: Speech-to-Text (hi-IN)
-    STT-->>Chat: "मेरा पोर्टफोलियो दिखाओ"
-    
-    Chat->>Orch: Process Intent
-    
-    par Agent Execution
-        Orch->>RA: Fetch Market Data
-        RA-->>Orch: Nifty: 24850 (+0.45%)
-        Orch->>PA: Analyze Portfolio
-        PA-->>Orch: Holdings + Health Score
-        Orch->>CA: Validate Response
-        CA-->>Orch: SEBI Compliant ✓
-    end
-    
-    Orch->>Nova: Generate Personalized Response
-    Nova-->>Orch: Hindi Response + Recommendations
-    
-    Orch-->>Chat: Final Response
-    Chat->>TTS: Text-to-Speech (Hindi)
-    TTS-->>App: Audio MP3
-    Chat->>Av: Generate Avatar Video
-    Av-->>App: Lip-synced Video
-    
-    App-->>C: Avatar Speaks Response 🗣️👩‍💼
+    U->>App: Enter email address
+    App->>API: POST /api/auth/send-otp
+    API->>Auth: Generate 6-digit OTP
+    Auth->>Store: Store OTP (5 min expiry)
+    Auth->>SES: Send email with OTP
+    SES-->>U: 📧 Email delivered with OTP
+    Auth-->>App: {status: "sent"}
+    App-->>U: Show OTP input screen
+
+    U->>App: Enter 6-digit OTP
+    App->>API: POST /api/auth/verify-otp
+    API->>Auth: Validate OTP
+    Auth->>Store: Check code + expiry + attempts
+    Store-->>Auth: Valid ✓
+    Auth-->>App: {verified: true}
+    App-->>U: ✅ Login successful → Dashboard
 ```
 
-### Agentic AI Architecture (Mermaid)
+### Chat Conversation Flow
+
+```mermaid
+sequenceDiagram
+    participant C as � Customer
+    participant App as 📱 App
+    participant STT as 👂 Transcribe
+    participant LLM as 🤖 Nova
+    participant RA as � Research
+    participant CA as ✅ Compliance
+    participant PA as 📈 Portfolio
+    participant TTS as 🗣️ Polly
+    participant AV as 🎭 Avatar
+
+    C->>App: 🎤 Voice Input (Hindi)
+    App->>STT: Audio stream
+    STT-->>App: Text transcript
+
+    App->>LLM: User message + context
+    
+    par Parallel Agent Execution
+        LLM->>RA: Fetch market data
+        RA-->>LLM: Market insights
+        LLM->>CA: Check SEBI compliance
+        CA-->>LLM: Validated ✓
+        LLM->>PA: Analyze portfolio
+        PA-->>LLM: Risk + gaps
+    end
+
+    LLM-->>App: Personalized response
+    App->>TTS: Text → Speech (Hindi)
+    TTS-->>App: Audio MP3
+    App->>AV: Animate avatar
+    AV-->>App: Lip-synced video
+    App-->>C: 🗣️👩‍💼 Avatar speaks response
+```
+
+### Agentic AI Architecture
 
 ```mermaid
 graph LR
     subgraph Input["User Input"]
-        UI[🎤 Voice / Text<br/>Multilingual]
+        V[🎤 Voice]
+        T[⌨️ Text]
     end
 
     subgraph Orchestrator["LangGraph Orchestrator"]
-        IC[🎯 Intent<br/>Classifier]
-        CM[🧠 Context<br/>Memory]
-        RP[📋 Response<br/>Planner]
+        IC[Intent Classifier]
+        CM[Context Memory]
+        RP[Response Planner]
     end
 
     subgraph Agents["Specialized Agents"]
-        subgraph Research["🔍 Research Agent"]
-            MKD[Market Data]
-            FP[Fund Performance]
-            SN[Sector News]
-        end
-        
-        subgraph Compliance["✅ Compliance Agent"]
-            SEBI[SEBI Rules]
-            SUIT[Suitability Check]
-            KYC[KYC Verification]
-        end
-        
-        subgraph Portfolio["📈 Portfolio Agent"]
-            HA[Holdings Analysis]
-            RISK[Risk Computation]
-            GAP[Gap Identification]
-        end
-        
-        subgraph Execution["⚙️ Execution Agent"]
-            SIP[SIP Orders]
-            SW[Fund Switch]
-            RED[Redemption]
-        end
-        
-        subgraph Personal["🧠 Personalization Agent"]
-            PREF[Preferences]
-            HIST[History]
-            SENT[Sentiment]
-        end
+        RA[🔍 Research<br/>Market + Fund Data]
+        CA[✅ Compliance<br/>SEBI Validation]
+        PA[📈 Portfolio<br/>Analysis + Risk]
+        EA[⚙️ Execution<br/>Order Placement]
     end
 
-    subgraph LLM["Amazon Nova"]
+    subgraph Models["Amazon Bedrock"]
         NL[Nova Lite<br/>Fast Conversations]
-        NP[Nova Pro<br/>Deep Analysis]
+        NP[Nova Pro<br/>Complex Analysis]
     end
 
     subgraph Output["Response"]
-        TXT[📝 Text Response]
-        AUD[🔊 Audio (Polly)]
-        VID[🎭 Avatar Video]
+        TXT[📝 Text]
+        AUD[🔊 Audio]
+        VID[🎭 Avatar]
     end
 
-    UI --> IC
+    V --> IC
+    T --> IC
     IC --> CM
     CM --> RP
-    RP --> Research
-    RP --> Compliance
-    RP --> Portfolio
-    RP --> Execution
-    RP --> Personal
-    Research --> NL
-    Compliance --> NL
-    Portfolio --> NP
-    Execution --> NL
-    Personal --> NL
+    RP --> RA
+    RP --> CA
+    RP --> PA
+    RP --> EA
+    RA --> NL
+    CA --> NL
+    PA --> NP
+    EA --> NL
     NL --> TXT
     NP --> TXT
     TXT --> AUD
     AUD --> VID
 ```
 
-### Deployment Architecture (Mermaid)
+### Deployment Architecture
 
 ```mermaid
 graph TB
-    subgraph VPC["AWS VPC (ap-south-1)"]
-        subgraph Public["Public Subnet"]
-            ALB[⚖️ Application Load Balancer]
-            NAT[🌐 NAT Gateway]
-        end
-        
-        subgraph Private["Private Subnet"]
-            subgraph ECS["ECS Fargate Cluster"]
-                BE[🐍 Backend Service<br/>FastAPI Containers]
-                FE[⚛️ Frontend Service<br/>Nginx + React]
-            end
-        end
-        
-        subgraph DB["Data Subnet"]
-            RDS2[(🗄️ RDS PostgreSQL<br/>Multi-AZ)]
-            DDB2[(⚡ DynamoDB<br/>Global Tables)]
-            REDIS2[(🔴 ElastiCache<br/>Redis Cluster)]
-        end
+    subgraph Internet
+        USER[🌍 Users]
     end
 
-    subgraph AWS["AWS Managed Services"]
-        CF2[☁️ CloudFront]
-        BED[🤖 Amazon Bedrock<br/>Nova Lite + Pro]
-        POL2[🗣️ Amazon Polly]
-        TRN2[👂 Amazon Transcribe]
-        S32[📦 S3 Buckets]
-        CW[📊 CloudWatch]
-        SM2[🔒 Secrets Manager]
+    subgraph AWS["AWS Cloud (us-east-1)"]
+        CF[☁️ CloudFront<br/>HTTPS CDN]
+        S3F[📦 S3 Bucket<br/>React Frontend]
+        APIGW[� HTTP API Gateway<br/>CORS Enabled]
+        LAMBDA[⚡ Lambda Function<br/>512MB / 30s timeout]
+        SES2[� SES<br/>OTP Emails]
+        BEDROCK[🤖 Bedrock<br/>Nova Lite + Pro]
+        POLLY[🗣️ Polly Neural<br/>TTS]
     end
 
-    Internet((🌍 Internet)) --> CF2
-    CF2 --> ALB
-    ALB --> BE
-    ALB --> FE
-    BE --> BED
-    BE --> POL2
-    BE --> TRN2
-    BE --> RDS2
-    BE --> DDB2
-    BE --> REDIS2
-    BE --> S32
-    BE --> SM2
-    CW --> BE
+    USER --> CF
+    CF --> S3F
+    USER --> APIGW
+    APIGW --> LAMBDA
+    LAMBDA --> SES2
+    LAMBDA --> BEDROCK
+    LAMBDA --> POLLY
 ```
-
----
-
-## Live Demo
-
-| Component | URL |
-|-----------|-----|
-| **Frontend App** | [https://dgmfyimmjupnd.cloudfront.net](https://dgmfyimmjupnd.cloudfront.net) |
-| **Frontend (S3 fallback)** | [http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com](http://finsight-ai-frontend-466742534146.s3-website-us-east-1.amazonaws.com) |
-| **Backend API** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
-| **Health Check** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health) |
 
 ---
 
 ## Quick Start
 
-### Option 1: Use Live Demo (Recommended)
+### Option 1: Use Live Demo
 
-Visit the frontend URL above — no setup needed.
+Visit https://dgmfyimmjupnd.cloudfront.net — login with your email to receive OTP.
 
 ### Option 2: Local Development
 
@@ -312,13 +274,9 @@ Visit the frontend URL above — no setup needed.
 ```bash
 cd backend
 python -m venv venv
-venv\Scripts\activate        # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
-
-# Copy and configure environment
 copy .env.example .env
-# Edit .env with your AWS credentials (optional - works without them)
-
 uvicorn app.main:app --reload --port 8000
 ```
 
@@ -331,58 +289,6 @@ npm run dev
 
 Open http://localhost:3000
 
-### Option 3: Docker
-
-```bash
-docker-compose up --build
-```
-
-Open http://localhost
-
----
-
-## Deployment Architecture (Live on AWS)
-
-```
-┌──────────────┐         ┌────────────────────┐         ┌─────────────────┐
-│  S3 Static   │────────▶│  API Gateway (HTTP)│────────▶│  AWS Lambda     │
-│  Website     │         │  CORS enabled      │         │  FastAPI+Mangum │
-│  (React App) │         └────────────────────┘         └────────┬────────┘
-└──────────────┘                                                 │
-                                                    ┌────────────┼────────────┐
-                                                    │            │            │
-                                              ┌─────▼─────┐ ┌───▼─────┐ ┌───▼──────┐
-                                              │  Bedrock  │ │  Polly  │ │  Fallback│
-                                              │ Nova Lite │ │  Neural │ │  Engine  │
-                                              │  (LLM)   │ │  (TTS)  │ │  (Demo)  │
-                                              └───────────┘ └─────────┘ └──────────┘
-```
-
-| AWS Service | Role | Cost |
-|-------------|------|------|
-| **S3** | Frontend static hosting | ~$0.02/month |
-| **Lambda** | Backend compute (512MB, 30s timeout) | Pay-per-request (~$0) |
-| **API Gateway** | HTTP API routing + CORS | Free tier (1M requests) |
-| **Bedrock (Nova Lite)** | AI conversation + reasoning | ~$0.001/request |
-| **Polly Neural** | Text-to-speech (12+ languages) | $4/1M chars |
-
-**Total monthly cost for demo: < $1**
-
----
-
-## Demo Without AWS Credentials (Local Mode)
-
-The app works **fully without AWS credentials** using intelligent fallback:
-
-| Feature | With AWS (Production) | Without AWS (Local Demo) |
-|---------|----------------------|--------------------------|
-| Chat AI | Amazon Bedrock Nova Lite/Pro | Context-aware local responses |
-| Voice Input | AWS Transcribe | Browser Web Speech API |
-| Voice Output | Amazon Polly Neural | Browser Speech Synthesis |
-| Avatar Video | D-ID API | CSS animated avatar |
-
-This means you can demo the full experience locally without any setup.
-
 ---
 
 ## Project Structure
@@ -394,40 +300,44 @@ FinSight AI/
 │   │   ├── main.py              # FastAPI application
 │   │   ├── config.py            # Configuration
 │   │   ├── routers/
-│   │   │   ├── chat.py          # Chat endpoints
-│   │   │   ├── portfolio.py     # Portfolio endpoints
+│   │   │   ├── auth.py          # Email OTP authentication
+│   │   │   ├── chat.py          # AI chat with agents
+│   │   │   ├── portfolio.py     # Portfolio management
 │   │   │   ├── recommendations.py
-│   │   │   ├── speech.py        # TTS/STT endpoints
+│   │   │   ├── speech.py        # TTS/STT
 │   │   │   └── avatar.py        # Avatar generation
 │   │   ├── services/
 │   │   │   ├── llm_service.py   # Bedrock Nova + fallback
 │   │   │   ├── speech_service.py
 │   │   │   └── avatar_service.py
-│   │   ├── data/
-│   │   │   └── customers.py     # Synthetic demo data
-│   │   └── models/
-│   │       └── schemas.py       # Pydantic models
+│   │   └── data/
+│   │       └── customers.py     # Synthetic demo data
+│   ├── lambda_handler.py        # AWS Lambda entry point
 │   ├── requirements.txt
-│   ├── Dockerfile
-│   └── .env.example
+│   └── Dockerfile
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx
+│   │   ├── App.jsx              # Route management
 │   │   ├── api.js               # API client
 │   │   ├── pages/
-│   │   │   ├── LandingPage.jsx  # Language + profile selection
-│   │   │   ├── ChatPage.jsx     # Main conversation UI
+│   │   │   ├── LoginPage.jsx    # Email OTP login
+│   │   │   ├── LandingPage.jsx  # Language + profile
+│   │   │   ├── ChatPage.jsx     # Avatar conversation
 │   │   │   └── PortfolioPage.jsx
 │   │   └── components/
-│   │       ├── Avatar.jsx       # Animated avatar component
+│   │       ├── Avatar.jsx       # Animated avatar
 │   │       └── ChatBubble.jsx
 │   ├── package.json
-│   ├── Dockerfile
 │   └── tailwind.config.js
 ├── docs/
-│   └── architecture.drawio      # Draw.io architecture diagram
-├── docker-compose.yml
-└── README.md
+│   ├── architecture.drawio
+│   ├── process-flow.drawio
+│   ├── use-case.drawio
+│   ├── wireframes.drawio
+│   └── prototype-snapshots.drawio
+├── infra/
+│   └── template.yaml           # SAM template
+└── docker-compose.yml
 ```
 
 ---
@@ -436,15 +346,15 @@ FinSight AI/
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/chat/message` | Send message, get AI response |
-| GET | `/api/portfolio/{id}` | Get customer portfolio |
-| GET | `/api/portfolio/{id}/analysis` | AI portfolio analysis |
-| GET | `/api/portfolio/market` | Market data |
-| POST | `/api/recommendations/generate` | Investment recommendations |
+| POST | `/api/auth/send-otp` | Send OTP to email via SES |
+| POST | `/api/auth/verify-otp` | Verify OTP code |
+| POST | `/api/chat/message` | AI chat with agents |
+| GET | `/api/portfolio/{id}` | Customer portfolio |
+| GET | `/api/portfolio/{id}/analysis` | AI health score |
+| POST | `/api/recommendations/generate` | Investment advice |
 | POST | `/api/speech/tts` | Text to speech |
-| POST | `/api/speech/stt` | Speech to text |
-| POST | `/api/avatar/generate` | Generate avatar video |
-| GET | `/api/avatar/config` | Avatar configuration |
+| GET | `/api/avatar/config` | Avatar settings |
+| GET | `/health` | Service health |
 
 ---
 
@@ -452,36 +362,39 @@ FinSight AI/
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Frontend** | React 18, Tailwind CSS, Framer Motion | Responsive UI with animations |
-| **Backend** | Python, FastAPI, LangGraph | High-performance APIs + Agent orchestration |
-| **LLM** | Amazon Bedrock Nova Lite / Nova Pro | Conversational AI + Complex reasoning |
-| **Speech** | Amazon Polly Neural + Transcribe | Multilingual TTS/STT (12+ languages) |
-| **Avatar** | D-ID API / CSS Animation | Photorealistic talking avatar |
-| **Database** | DynamoDB + RDS PostgreSQL | Sessions + Relational data |
-| **Cache** | ElastiCache Redis | Real-time data + session cache |
-| **CDN** | Amazon CloudFront | Low-latency global delivery |
-| **Auth** | Amazon Cognito | Secure authentication + MFA |
-| **Infra** | Docker, ECS Fargate, Nginx | Containerized serverless deployment |
-| **CI/CD** | GitHub Actions | Automated build and deploy |
+| **Frontend** | React 18, Tailwind CSS, Framer Motion | UI with IDBI brand colors |
+| **Backend** | Python, FastAPI, LangGraph | API + Agent orchestration |
+| **Auth** | AWS SES + OTP | Email-based secure authentication |
+| **LLM** | Amazon Bedrock Nova Lite/Pro | Conversational AI |
+| **Speech** | Amazon Polly Neural + Transcribe | Multilingual TTS/STT |
+| **Avatar** | D-ID API / CSS Animation | Talking avatar |
+| **Hosting** | S3 + CloudFront (HTTPS) | Static frontend |
+| **Compute** | AWS Lambda + API Gateway | Serverless backend |
+| **Database** | DynamoDB | Session storage |
 
 ---
 
-## Amazon Nova Model Selection
+## Color Scheme (IDBI Bank Brand)
 
-| Model | Use Case | Why |
-|-------|----------|-----|
-| **Nova Lite** | Real-time conversation, quick Q&A, market updates | Fast response (<2s), low cost, good multilingual support |
-| **Nova Pro** | Portfolio analysis, financial planning, complex reasoning | Deeper reasoning, better accuracy for financial math |
+| Color | Hex | Usage |
+|-------|-----|-------|
+| IDBI Teal | `#00857C` | Primary, headers, trust elements |
+| IDBI Orange | `#E87722` | Accent, CTAs, highlights, buttons |
+| Dark Teal | `#004D47` | Backgrounds, gradients |
+| Light Teal | `#E6F5F3` | Hover states, cards |
+| Light Orange | `#FEF3E8` | Alerts, notifications |
 
 ---
 
-## Demo Profiles
+## Security
 
-| Customer | Risk Profile | Language | Portfolio |
-|----------|-------------|----------|-----------|
-| Rajesh Kumar | Moderate | Hindi | ₹8.45L |
-| Priya Sharma | Aggressive | English | ₹3.20L |
-| Venkatesh Iyer | Conservative | Tamil | ₹45.20L |
+- Email-based OTP authentication (no passwords stored)
+- OTP expires after 5 minutes
+- Maximum 5 verification attempts per OTP
+- HTTPS via CloudFront
+- CORS restricted on API Gateway
+- No sensitive data in frontend code
+- AWS IAM roles with least privilege
 
 ---
 
