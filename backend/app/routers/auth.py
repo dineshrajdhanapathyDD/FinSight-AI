@@ -43,7 +43,7 @@ async def send_otp(request: OtpRequest):
     if SES_AVAILABLE:
         try:
             ses_client.send_email(
-                Source="finsight.ai.otp@gmail.com",
+                Source="dineshrajdhanapathy@gmail.com",
                 Destination={"ToAddresses": [email]},
                 Message={
                     "Subject": {"Data": "FinSight AI - Your Login OTP"},

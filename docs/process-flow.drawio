@@ -1,169 +1,66 @@
-<mxfile host="65bd71144e">
-    <diagram id="process-flow" name="Process Flow Diagram">
-        <mxGraphModel dx="536" dy="261" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1800" math="0" shadow="1">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="FinSight AI (Dhan Sakhi) - Process Flow Diagram" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
-                    <mxGeometry x="460" y="120" width="500" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="3" value="START" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-                    <mxGeometry x="640" y="180" width="100" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="Customer Opens&#10;IDBI Mobile App" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="270" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="5" edge="1" parent="1" source="3" target="4">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="Authentication&#10;(Biometric / PIN / OTP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="370" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="7" edge="1" parent="1" source="4" target="6">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="8" value="Select Preferred Language&#10;(12+ Indian Languages)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="470" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="9" edge="1" parent="1" source="6" target="8">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="10" value="🎭 AI Avatar Greets&#10;Customer by Name&#10;(in chosen language)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="570" width="160" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="11" edge="1" parent="1" source="8" target="10">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="12" value="🎤 Customer Speaks&#10;(Voice Input)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="680" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="13" edge="1" parent="1" source="10" target="12">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="14" value="👂 Amazon Transcribe&#10;Speech-to-Text&#10;(Multilingual)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="780" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="15" edge="1" parent="1" source="12" target="14">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="16" value="🎯 Intent Detection&#10;&amp; Context Engine" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="600" y="880" width="180" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" edge="1" parent="1" source="14" target="16">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="18" value="🔍 Research&#10;Agent&#10;(Market Data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="1030" width="120" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="19" value="✅ Compliance&#10;Agent&#10;(SEBI Rules)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
-                    <mxGeometry x="510" y="1030" width="120" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="20" value="📈 Portfolio&#10;Agent&#10;(Holdings)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
-                    <mxGeometry x="670" y="1030" width="120" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="21" value="🧠 Personalization&#10;Agent&#10;(Preferences)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
-                    <mxGeometry x="830" y="1030" width="120" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" edge="1" parent="1" source="16" target="18">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="23" edge="1" parent="1" source="16" target="19">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="24" edge="1" parent="1" source="16" target="20">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" edge="1" parent="1" source="16" target="21">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="26" value="🤖 Amazon Nova (Bedrock)&#10;LLM Decision Engine&#10;Synthesize All Agent Inputs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ff6f00;strokeColor=#e65100;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-                    <mxGeometry x="550" y="1150" width="220" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="27" edge="1" parent="1" source="18" target="26">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="28" edge="1" parent="1" source="19" target="26">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="29" edge="1" parent="1" source="20" target="26">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="30" edge="1" parent="1" source="21" target="26">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="31" value="📝 Generate Personalized&#10;Response + Recommendation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="580" y="1260" width="180" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="32" edge="1" parent="1" source="26" target="31">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="33" value="🗣️ Amazon Polly Neural&#10;Text-to-Speech" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00897b;strokeColor=#004d40;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="580" y="1360" width="180" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="34" edge="1" parent="1" source="31" target="33">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="35" value="🎭 Avatar Renders Response&#10;(Lip-sync + Expressions)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-                    <mxGeometry x="580" y="1460" width="180" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="36" edge="1" parent="1" source="33" target="35">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="37" value="Customer&#10;Decision?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="600" y="1560" width="140" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="38" edge="1" parent="1" source="35" target="37">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="39" value="✅ Accept &amp;&#10;Execute Investment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;strokeColor=#1b5e20;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-                    <mxGeometry x="410" y="1700" width="150" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="40" value="❓ Ask More&#10;Questions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="610" y="1700" width="130" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="41" value="👨‍💼 Transfer to&#10;Human RM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=11;" vertex="1" parent="1">
-                    <mxGeometry x="790" y="1700" width="130" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="42" value="Accept" style="" edge="1" parent="1" source="37" target="39">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="43" value="More Info" style="" edge="1" parent="1" source="37" target="40">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="44" value="Escalate" style="" edge="1" parent="1" source="37" target="41">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="45" value="" style="edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="40" target="12">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="675" y="1810"/>
-                            <mxPoint x="1010" y="1810"/>
-                            <mxPoint x="1010" y="710"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="46" value="Loop back to conversation" style="text;html=1;align=center;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
-                    <mxGeometry x="980" y="1200" width="120" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="47" value="⚙️ Execution Agent&#10;Places Order via&#10;IDBI Core Banking API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a237e;strokeColor=#0d47a1;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
-                    <mxGeometry x="380" y="1800" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="48" edge="1" parent="1" source="39" target="47">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="49" value="✅ Avatar Confirms&#10;Transaction Complete&#10;+ Summary" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;fontStyle=1;" vertex="1" parent="1">
-                    <mxGeometry x="400" y="1900" width="160" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="50" edge="1" parent="1" source="47" target="49">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="51" value="END" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c62828;fontColor=#ffffff;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-                    <mxGeometry x="430" y="2000" width="100" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="52" edge="1" parent="1" source="49" target="51">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
+<mxfile host="app.diagrams.net" modified="2026-07-08T12:00:00.000Z" agent="FinSight AI">
+  <diagram id="flow" name="Process Flow - User Journey">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" value="FinSight AI — Complete User Journey Flow" style="text;html=1;align=center;fontSize=16;fontStyle=1;fontColor=#00857C;" vertex="1" parent="1"><mxGeometry x="300" y="10" width="400" height="30" as="geometry" /></mxCell>
+        <mxCell id="s" value="START" style="ellipse;fillColor=#00857C;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="450" y="50" width="100" height="40" as="geometry" /></mxCell>
+        <mxCell id="f1" value="Open App / Website" style="rounded=1;fillColor=#E6F5F3;strokeColor=#00857C;" vertex="1" parent="1"><mxGeometry x="425" y="110" width="150" height="40" as="geometry" /></mxCell>
+        <mxCell id="f2" value="Enter Email Address" style="rounded=1;fillColor=#FEF3E8;strokeColor=#E87722;" vertex="1" parent="1"><mxGeometry x="425" y="170" width="150" height="40" as="geometry" /></mxCell>
+        <mxCell id="f3" value="📧 AWS SES Sends OTP&#xa;to Email" style="rounded=1;fillColor=#E87722;strokeColor=#C4621A;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="420" y="230" width="160" height="50" as="geometry" /></mxCell>
+        <mxCell id="f4" value="Enter 6-Digit OTP" style="rounded=1;fillColor=#FEF3E8;strokeColor=#E87722;" vertex="1" parent="1"><mxGeometry x="425" y="300" width="150" height="40" as="geometry" /></mxCell>
+        <mxCell id="d1" value="Valid?" style="rhombus;fillColor=#fff;strokeColor=#E87722;" vertex="1" parent="1"><mxGeometry x="455" y="360" width="90" height="70" as="geometry" /></mxCell>
+        <mxCell id="f5" value="Select Language&#xa;(12+ Indian Languages)" style="rounded=1;fillColor=#E6F5F3;strokeColor=#00857C;" vertex="1" parent="1"><mxGeometry x="420" y="460" width="160" height="45" as="geometry" /></mxCell>
+        <mxCell id="f6" value="Select Demo Profile&#xa;(Customer Persona)" style="rounded=1;fillColor=#E6F5F3;strokeColor=#00857C;" vertex="1" parent="1"><mxGeometry x="420" y="525" width="160" height="45" as="geometry" /></mxCell>
+        <mxCell id="f7" value="🎭 Avatar Greets Customer&#xa;by Name in Chosen Language" style="rounded=1;fillColor=#E87722;strokeColor=#C4621A;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="400" y="595" width="200" height="50" as="geometry" /></mxCell>
+        <mxCell id="f8" value="🎤 Customer Speaks / Types&#xa;Query in Any Language" style="rounded=1;fillColor=#E6F5F3;strokeColor=#00857C;" vertex="1" parent="1"><mxGeometry x="410" y="670" width="180" height="50" as="geometry" /></mxCell>
+        <mxCell id="f9" value="👂 Speech-to-Text&#xa;(Amazon Transcribe)" style="rounded=1;fillColor=#00857C;strokeColor=#004D47;fontColor=#fff;" vertex="1" parent="1"><mxGeometry x="420" y="745" width="160" height="45" as="geometry" /></mxCell>
+        <mxCell id="f10" value="🎯 Intent Detection +&#xa;Context Engine" style="rhombus;fillColor=#FEF3E8;strokeColor=#E87722;" vertex="1" parent="1"><mxGeometry x="430" y="815" width="140" height="80" as="geometry" /></mxCell>
+        <mxCell id="ag1" value="🔍 Research&#xa;Agent" style="rounded=1;fillColor=#004D47;fontColor=#fff;fontSize=10;" vertex="1" parent="1"><mxGeometry x="200" y="930" width="90" height="50" as="geometry" /></mxCell>
+        <mxCell id="ag2" value="✅ Compliance&#xa;Agent" style="rounded=1;fillColor=#004D47;fontColor=#fff;fontSize=10;" vertex="1" parent="1"><mxGeometry x="320" y="930" width="90" height="50" as="geometry" /></mxCell>
+        <mxCell id="ag3" value="📈 Portfolio&#xa;Agent" style="rounded=1;fillColor=#004D47;fontColor=#fff;fontSize=10;" vertex="1" parent="1"><mxGeometry x="440" y="930" width="90" height="50" as="geometry" /></mxCell>
+        <mxCell id="ag4" value="🧠 Personal&#xa;Agent" style="rounded=1;fillColor=#004D47;fontColor=#fff;fontSize=10;" vertex="1" parent="1"><mxGeometry x="560" y="930" width="90" height="50" as="geometry" /></mxCell>
+        <mxCell id="ag5" value="⚙️ Execution&#xa;Agent" style="rounded=1;fillColor=#004D47;fontColor=#fff;fontSize=10;" vertex="1" parent="1"><mxGeometry x="680" y="930" width="90" height="50" as="geometry" /></mxCell>
+        <mxCell id="f11" value="🤖 Amazon Nova LLM&#xa;Generate Response" style="rounded=1;fillColor=#E87722;strokeColor=#C4621A;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="400" y="1020" width="200" height="50" as="geometry" /></mxCell>
+        <mxCell id="f12" value="🗣️ Text-to-Speech&#xa;(Amazon Polly Neural)" style="rounded=1;fillColor=#00857C;strokeColor=#004D47;fontColor=#fff;" vertex="1" parent="1"><mxGeometry x="420" y="1095" width="160" height="45" as="geometry" /></mxCell>
+        <mxCell id="f13" value="🎭 Avatar Speaks Response&#xa;(Lip-sync + Expressions)" style="rounded=1;fillColor=#E87722;strokeColor=#C4621A;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="400" y="1165" width="200" height="50" as="geometry" /></mxCell>
+        <mxCell id="d2" value="Customer&#xa;Action?" style="rhombus;fillColor=#fff;strokeColor=#00857C;" vertex="1" parent="1"><mxGeometry x="440" y="1240" width="120" height="80" as="geometry" /></mxCell>
+        <mxCell id="a1" value="✅ Accept &amp;&#xa;Execute" style="rounded=1;fillColor=#00857C;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="250" y="1360" width="110" height="45" as="geometry" /></mxCell>
+        <mxCell id="a2" value="❓ Ask More" style="rounded=1;fillColor=#E6F5F3;strokeColor=#00857C;" vertex="1" parent="1"><mxGeometry x="440" y="1360" width="110" height="45" as="geometry" /></mxCell>
+        <mxCell id="a3" value="👨‍💼 Talk to RM" style="rounded=1;fillColor=#FEF3E8;strokeColor=#E87722;" vertex="1" parent="1"><mxGeometry x="630" y="1360" width="110" height="45" as="geometry" /></mxCell>
+        <mxCell id="end" value="END" style="ellipse;fillColor=#E87722;fontColor=#fff;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="270" y="1440" width="80" height="35" as="geometry" /></mxCell>
+        <mxCell id="err" value="❌ Error:&#xa;Retry" style="rounded=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=10;" vertex="1" parent="1"><mxGeometry x="620" y="370" width="80" height="45" as="geometry" /></mxCell>
+        <mxCell id="e01" edge="1" source="s" target="f1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e02" edge="1" source="f1" target="f2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e03" edge="1" source="f2" target="f3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e04" edge="1" source="f3" target="f4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e05" edge="1" source="f4" target="d1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e06" value="Yes" edge="1" source="d1" target="f5" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e07" value="No" edge="1" source="d1" target="err" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e08" edge="1" source="f5" target="f6" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e09" edge="1" source="f6" target="f7" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" source="f7" target="f8" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" source="f8" target="f9" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" source="f9" target="f10" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" source="f10" target="ag1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" source="f10" target="ag2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" source="f10" target="ag3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" source="f10" target="ag4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" edge="1" source="f10" target="ag5" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" edge="1" source="ag1" target="f11" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e19" edge="1" source="ag2" target="f11" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e20" edge="1" source="ag3" target="f11" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e21" edge="1" source="ag4" target="f11" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e22" edge="1" source="ag5" target="f11" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e23" edge="1" source="f11" target="f12" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e24" edge="1" source="f12" target="f13" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e25" edge="1" source="f13" target="d2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e26" value="Accept" edge="1" source="d2" target="a1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e27" value="Ask More" edge="1" source="d2" target="a2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e28" value="Escalate" edge="1" source="d2" target="a3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e29" edge="1" source="a1" target="end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>
