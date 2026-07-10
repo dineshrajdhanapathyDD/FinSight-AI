@@ -482,7 +482,7 @@ FinSight AI/
 |------|------|
 | **GitHub Repo** | [https://github.com/dineshrajdhanapathyDD/FinSight-AI](https://github.com/dineshrajdhanapathyDD/FinSight-AI) |
 | **Live Product** | [https://dgmfyimmjupnd.cloudfront.net](https://dgmfyimmjupnd.cloudfront.net) |
-| **Demo Video** | _To be added_ |
+| **Demo Video** | [Dhan Sakhi youtube video](https://www.youtube.com/watch?v=iFYABWJwrOM) |
 <!--| **API Endpoint** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |-->
 ---
 
