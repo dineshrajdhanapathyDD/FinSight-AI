@@ -15,6 +15,19 @@
 | **Backend API** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com) |
 | **Health Check** | [https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health](https://z1go1ry6zi.execute-api.us-east-1.amazonaws.com/health) |
 -->
+
+### Demo Login
+
+| Step | Action |
+|------|--------|
+| 1 | Enter any email address |
+| 2 | Click "Send OTP" |
+| 3 | Enter demo OTP: **`123456`** |
+| 4 | Select language and customer profile |
+| 5 | Start chatting with Dhan Sakhi! |
+
+> Real email OTP delivery is also supported for verified emails via AWS SES.
+
 ---
 
 ## Overview
@@ -23,8 +36,8 @@ FinSight AI (Dhan Sakhi) is an AI-powered digital wealth management application 
 
 ### Key Features
 
-- � **Email OTP Authentication** — Real email-based OTP for secure login via AWS SES
-- �🗣️ **Multilingual Voice Conversation** — Hindi, Tamil, Telugu, Bengali, English + 7 more
+- **Email OTP Authentication** — Real email-based OTP via AWS SES + Demo mode (OTP: `123456`) for instant access
+- **Multilingual Voice Conversation** — Hindi, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, English (9 languages)
 - 👩‍💼 **AI Avatar** — Animated, lip-synced digital advisor with emotional intelligence
 - 🤖 **Agentic AI** — Research, Compliance, and Portfolio agents work autonomously
 - 📊 **Portfolio Dashboard** — Real-time holdings, allocation, AI health score
@@ -292,7 +305,12 @@ graph TB
 
 ### Option 1: Use Live Demo
 
-Visit https://dgmfyimmjupnd.cloudfront.net — login with your email to receive OTP.
+Visit https://dgmfyimmjupnd.cloudfront.net
+
+1. Enter any email address
+2. Use demo OTP: **`123456`**
+3. Select a language and demo customer profile
+4. Start chatting!
 
 ### Option 2: Local Development
 
@@ -384,19 +402,35 @@ FinSight AI/
 
 ---
 
+## AWS Services Used
+
+| Service | Purpose |
+|---------|---------|
+| **AWS Lambda** | Serverless backend (Python 3.11, FastAPI) |
+| **API Gateway** | HTTP API with CORS |
+| **S3** | Frontend hosting + deployment packages |
+| **CloudFront** | HTTPS CDN for frontend |
+| **Amazon Bedrock** | Nova Lite v1 for conversational AI |
+| **Amazon SES** | Email OTP delivery |
+| **Amazon Polly** | Neural text-to-speech (Hindi/English) |
+| **IAM** | Least-privilege access control |
+
+---
+
 ## Technologies
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
 | **Frontend** | React 18, Tailwind CSS, Framer Motion | UI with IDBI brand colors |
 | **Backend** | Python, FastAPI, LangGraph | API + Agent orchestration |
-| **Auth** | AWS SES + OTP | Email-based secure authentication |
+| **Auth** | AWS SES + OTP (Demo: `123456`) | Email-based secure authentication |
 | **LLM** | Amazon Bedrock Nova Lite/Pro | Conversational AI |
 | **Speech** | Amazon Polly Neural + Transcribe | Multilingual TTS/STT |
 | **Avatar** | D-ID API / CSS Animation | Talking avatar |
 | **Hosting** | S3 + CloudFront (HTTPS) | Static frontend |
 | **Compute** | AWS Lambda + API Gateway | Serverless backend |
 | **Database** | DynamoDB | Session storage |
+| **Region** | us-east-1 | All services deployed here |
 
 ---
 
@@ -412,9 +446,27 @@ FinSight AI/
 
 ---
 
+## Languages Supported
+
+| Language | Code | Voice (TTS) | Speech Recognition |
+|----------|------|-------------|-------------------|
+| English | en | Amazon Polly (Kajal Neural) | Web Speech API |
+| Hindi | hi | Amazon Polly (Kajal Neural) | Web Speech API |
+| Tamil | ta | Browser TTS | Web Speech API |
+| Telugu | te | Browser TTS | Web Speech API |
+| Bengali | bn | Browser TTS | Web Speech API |
+| Marathi | mr | Browser TTS | Web Speech API |
+| Gujarati | gu | Browser TTS | Web Speech API |
+| Kannada | kn | Browser TTS | Web Speech API |
+| Malayalam | ml | Browser TTS | Web Speech API |
+
+---
+
 ## Security
 
 - Email-based OTP authentication (no passwords stored)
+- Demo mode with universal OTP (`123456`) for hackathon evaluation
+- Real OTP delivery via AWS SES for verified emails
 - OTP expires after 5 minutes
 - Maximum 5 verification attempts per OTP
 - HTTPS via CloudFront

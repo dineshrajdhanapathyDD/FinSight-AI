@@ -9,6 +9,8 @@ export default function LoginPage({ onLogin }) {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const [demoMode, setDemoMode] = useState(false)
+
   const handleSendOtp = async (e) => {
     e.preventDefault()
     setError('')
@@ -18,7 +20,8 @@ export default function LoginPage({ onLogin }) {
     }
     setLoading(true)
     try {
-      await sendOtp(email)
+      const result = await sendOtp(email)
+      setDemoMode(result.demo_mode || false)
       setStep('otp')
     } catch (err) {
       setError('Failed to send OTP. Please try again.')
@@ -133,9 +136,20 @@ export default function LoginPage({ onLogin }) {
 
               {/* Security notice */}
               <div className="bg-idbi-teal-light border border-idbi-primary/20 rounded-lg p-3 mb-4">
-                <p className="text-xs text-idbi-primary text-center">
-                  🔒 A 6-digit OTP has been sent to your email. Check inbox/spam.
-                </p>
+                {demoMode ? (
+                  <div className="text-center">
+                    <p className="text-xs text-idbi-primary font-medium">
+                      Demo Mode - Use OTP: <span className="font-mono font-bold text-idbi-accent text-sm">123456</span>
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      For hackathon demo. Real OTP also sent if email is verified.
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-xs text-idbi-primary text-center">
+                    A 6-digit OTP has been sent to your email. Check inbox/spam.
+                  </p>
+                )}
               </div>
 
               {error && (

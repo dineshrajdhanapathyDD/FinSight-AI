@@ -8,6 +8,11 @@ from app.config import get_settings
 router = APIRouter()
 settings = get_settings()
 
+# Demo mode: allows login with code "123456" for any email (for hackathon/judges)
+# Set to False once SES production access is approved
+DEMO_MODE = True
+DEMO_OTP = "123456"
+
 # In-memory OTP store (use DynamoDB/Redis in production)
 otp_store: dict = {}
 
@@ -37,6 +42,10 @@ async def send_otp(request: OtpRequest):
     # Generate 6-digit OTP
     otp_code = str(random.randint(100000, 999999))
     otp_store[email] = {"code": otp_code, "created_at": time.time(), "attempts": 0}
+
+    # In demo mode, also accept the demo OTP
+    if DEMO_MODE:
+        otp_store[email]["demo"] = True
 
     # Try sending via AWS SES
     email_sent = False
@@ -83,6 +92,7 @@ async def send_otp(request: OtpRequest):
         "status": "sent",
         "email": email,
         "email_delivered": email_sent,
+        "demo_mode": DEMO_MODE,
         "message": "OTP sent to your email" if email_sent else "OTP sent successfully",
         "expires_in": 300,
     }
@@ -95,11 +105,26 @@ async def verify_otp(request: OtpVerify):
     otp_data = otp_store.get(email)
 
     if not otp_data:
+        # In demo mode, accept demo OTP even without send-otp step
+        if DEMO_MODE and request.otp == DEMO_OTP:
+            return {
+                "verified": True,
+                "email": email,
+                "message": "Authentication successful (Demo Mode)",
+                "demo_mode": True,
+            }
         raise HTTPException(status_code=400, detail="No OTP found. Please request a new one.")
 
     # Check expiry (5 minutes)
     if time.time() - otp_data["created_at"] > 300:
         del otp_store[email]
+        if DEMO_MODE and request.otp == DEMO_OTP:
+            return {
+                "verified": True,
+                "email": email,
+                "message": "Authentication successful (Demo Mode)",
+                "demo_mode": True,
+            }
         raise HTTPException(status_code=400, detail="OTP expired. Please request a new one.")
 
     # Check attempts (max 5)
@@ -109,13 +134,14 @@ async def verify_otp(request: OtpVerify):
 
     otp_data["attempts"] += 1
 
-    # Verify (accept actual OTP only)
-    if request.otp == otp_data["code"]:
+    # Verify — accept actual OTP or demo OTP (in demo mode)
+    if request.otp == otp_data["code"] or (DEMO_MODE and request.otp == DEMO_OTP):
         del otp_store[email]
         return {
             "verified": True,
             "email": email,
             "message": "Authentication successful",
+            "demo_mode": DEMO_MODE and request.otp == DEMO_OTP,
         }
     else:
         return {
